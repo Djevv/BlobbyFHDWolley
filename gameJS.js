@@ -16,7 +16,7 @@ var myGameArea = {
     this.canvas.height = 270;
     this.context = this.canvas.getContext("2d");
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-    this.interval = setInterval(updateGameArea, 20);
+    this.interval = setInterval(updateGameArea, 20);   // Game Loop mit 20fps
     
     window.addEventListener('keydown', function (e) {
       myGameArea.keys = (myGameArea.keys || []);
@@ -58,11 +58,11 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
     }
 
   this.newPos = function() {
-    if ((this.x + this.speedX) >= minX && (this.x + this.speedX) <= maxX) {
+    if ((this.x + this.speedX) >= minX && (this.x + this.speedX) <= maxX) {  //Funktion dient das Spielfeld für den Spieler auf der X-Achse zu begrenzen.
       this.x += this.speedX;
     }
 
-    if ((this.y + this.speedY + this.gravitySpeed) >= minY && (this.y + this.speedY + this.gravitySpeed) <= maxY) {
+    if ((this.y + this.speedY + this.gravitySpeed) >= minY && (this.y + this.speedY + this.gravitySpeed) <= maxY) { //Funktion dient das Spielfeld für den 
       this.gravitySpeed += this.gravity;
       this.y = this.y + this.speedY + this.gravitySpeed;
     } else {
