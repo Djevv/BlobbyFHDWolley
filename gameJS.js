@@ -147,6 +147,7 @@ function updateGameArea() {
     ball1.speedX += (player1.speedX * 10);
     ball1.speedY += -30;
   };
+  
   ball1.newPos();
   player1.update();
   ball1.update();
