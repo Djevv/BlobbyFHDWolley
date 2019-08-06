@@ -147,7 +147,7 @@ function updateGameArea() {
     ball1.speedX += (player1.speedX * 10);
     ball1.speedY += -30;
   };
-  
+
   ball1.newPos();
   player1.update();
   ball1.update();
@@ -155,4 +155,13 @@ function updateGameArea() {
 
   document.getElementById("X").innerHTML = player1.x;
   document.getElementById("Y").innerHTML = player1.y;
+}
+
+
+
+
+
+
+function blablacommitnix(){
+  var lel;
 }
