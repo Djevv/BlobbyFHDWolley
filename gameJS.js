@@ -5,7 +5,7 @@ var myNetz;
 function startGame() {
   player1 = new player(30, 30, "red", 20, 120, 206, 240, 0, 0);
   myNetz = new player(10, 135, "green", 235, 135, 0, 0, 0, 0)
-  ball1 = new ball(20, 20, "blue", 50, 100, 480, 250) 
+  ball1 = new ball(20, 20, "blue", 50, 100, 460, 250) 
   myGameArea.start();
 }
 
@@ -85,6 +85,8 @@ function ball(width, height, color, x, y, maxX, maxY) {
   this.minY = 0;
   this.gravity = 0.1;
   this.gravitySpeed = 0;
+  this.gravityX = 0.1;
+  this.gravitySpeedX = 0;
 
   this.update = function() {
     ctx = myGameArea.context;
@@ -93,15 +95,17 @@ function ball(width, height, color, x, y, maxX, maxY) {
     }
 
   this.newPos = function() {
-    if ((this.x + this.speedX) >= this.minX && (this.x + this.speedX) <= this.maxX) {
-      this.x += this.speedX;
+    if ((this.x + this.speedX + this.gravitySpeedX) >= this.minX && (this.x + this.speedX + this.gravitySpeedX) <= this.maxX) {
+      this.gravitySpeedX += this.gravityX;
+      this.x = this.x + this.speedX + this.gravitySpeedX;
     }
- 
+
     if ((this.y + this.speedY + this.gravitySpeed) >= this.minY && (this.y + this.speedY + this.gravitySpeed) <= this.maxY) {
       this.gravitySpeed += this.gravity;
       this.y = this.y + this.speedY + this.gravitySpeed;
     } else {
       this.gravitySpeed = 0;
+      this.gravitySpeedX = 0;
     }
   }
 
@@ -139,9 +143,9 @@ function updateGameArea() {
 
   player1.newPos();
   if (ball1.collisionp1(player1)) {
-    ball1.gravitySpeed = 0;
+    ball1.gravitySpeed = -10;
     ball1.speedX += (player1.speedX * 10);
-    ball1.speedY += -25;
+    ball1.speedY += -30;
   };
   ball1.newPos();
   player1.update();
