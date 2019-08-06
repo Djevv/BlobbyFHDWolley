@@ -49,7 +49,7 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   this.minY = minY;
   this.gravity = 0.25;
   this.gravitySpeed = 0;
-  this.jump = true;
+  this.jump = true; //Hilfsvariable, damit nicht mehrmals gesprungen werden kann. Wird wieder auf True gesetzt wenn der Spieler den Boden berührt.
 
   this.update = function(){
     ctx = myGameArea.context;
@@ -58,11 +58,13 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
     }
 
   this.newPos = function() {
-    if ((this.x + this.speedX) >= minX && (this.x + this.speedX) <= maxX) {  //Funktion dient das Spielfeld für den Spieler auf der X-Achse zu begrenzen.
+
+//Funktion dient das Spielfeld für den Spieler auf der X-Achse zu begrenzen.
+    if ((this.x + this.speedX) >= minX && (this.x + this.speedX) <= maxX) {  
       this.x += this.speedX;
     }
-
-    if ((this.y + this.speedY + this.gravitySpeed) >= minY && (this.y + this.speedY + this.gravitySpeed) <= maxY) { //Funktion dient das Spielfeld für den 
+//Funktion dient das Spielfeld für den Spieler auf der Y-Achse zu begrenzen.
+    if ((this.y + this.speedY + this.gravitySpeed) >= minY && (this.y + this.speedY + this.gravitySpeed) <= maxY) { 
       this.gravitySpeed += this.gravity;
       this.y = this.y + this.speedY + this.gravitySpeed;
     } else {
