@@ -99,7 +99,8 @@ function ball(width, height, color, x, y, maxX, maxY) {
   this.newPos = function() {
     if ((this.x + this.speedX + this.gravitySpeedX) >= this.minX && (this.x + this.speedX + this.gravitySpeedX) <= this.maxX) {
       this.gravitySpeedX += this.gravityX;
-      this.x = this.x + this.speedX + this.gravitySpeedX;
+      this.x = this.x + this.speedX 
+      //+ this.gravitySpeedX;
     }
 
     if ((this.y + this.speedY + this.gravitySpeed) >= this.minY && (this.y + this.speedY + this.gravitySpeed) <= this.maxY) {
