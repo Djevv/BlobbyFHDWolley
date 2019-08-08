@@ -146,8 +146,9 @@ function updateGameArea() {
   player1.newPos();
   if (ball1.collisionp1(player1)) {
     ball1.gravitySpeed = -10;
-    ball1.speedX += (player1.speedX * 10);
-    ball1.speedY += -30;
+    //ball1.speedX += (player1.speedX * 10);
+    balll1.speedX = (((ball1.x + 10) - (player1.x + 15)) / 25) * 10
+    ball1.speedY += -10;
   };
 
   ball1.newPos();
