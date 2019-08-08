@@ -162,12 +162,3 @@ function updateGameArea() {
   document.getElementById("X").innerHTML = player1.x;
   document.getElementById("Y").innerHTML = player1.y;
 }
-
-
-
-
-
-
-function blablacommitnix(){
-  var lel;
-}
