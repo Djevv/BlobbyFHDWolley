@@ -97,10 +97,12 @@ function ball(width, height, color, x, y, maxX, maxY) {
     }
 
   this.newPos = function() {
-    if ((this.x + this.speedX + this.gravitySpeedX) >= this.minX && (this.x + this.speedX + this.gravitySpeedX) <= this.maxX) {
+    if ((this.x + this.speedX) >= this.minX && (this.x + this.speedX + this.gravitySpeedX) <= this.maxX) {
       this.gravitySpeedX += this.gravityX;
       this.x = this.x + this.speedX 
       //+ this.gravitySpeedX;
+    } else {
+      this.speedX *= (-1);
     }
 
     if ((this.y + this.speedY + this.gravitySpeed) >= this.minY && (this.y + this.speedY + this.gravitySpeed) <= this.maxY) {
@@ -138,18 +140,18 @@ function updateGameArea() {
   myGameArea.clear();
   player1.speedX = 0;
   player1.speedY = 0;
-  ball1.speedX = 0;
+  //ball1.speedX = 0;
   ball1.speedY = 0;
   if (myGameArea.keys && myGameArea.keys[37]) {player1.speedX = -3;}
   if (myGameArea.keys && myGameArea.keys[39]) {player1.speedX = 3;}
   if (myGameArea.keys && myGameArea.keys[38] && player1.jump == true) {player1.speedY = -8;}
 
   player1.newPos();
+
   if (ball1.collisionp1(player1)) {
-    ball1.gravitySpeed = -10;
-    //ball1.speedX += (player1.speedX * 10);
-    balll1.speedX = (((ball1.x + 10) - (player1.x + 15)) / 25) * 10
-    ball1.speedY += -10;
+    ball1.gravitySpeed = (-5) + ((Math.abs(((ball1.x + 10) - (player1.x + 15)) / 25)) * (2));
+    ball1.speedX = (((ball1.x + 10) - (player1.x + 15)) / 25) * 5
+    ball1.speedY +=  -10;
   };
 
   ball1.newPos();
