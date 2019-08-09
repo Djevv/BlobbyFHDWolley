@@ -4,6 +4,7 @@ var myNetz;
 
 function startGame() {
   player1 = new player(30, 30, "red", 20, 120, 206, 240, 0, 0);
+  player2 = new player(30, 30, "red", 440, 120, 450, 240, 245, 0);
   myNetz = new player(10, 135, "green", 235, 135, 0, 0, 0, 0)
   ball1 = new ball(20, 20, "blue", 50, 100, 460, 250) 
   myGameArea.start();
@@ -29,13 +30,17 @@ var myGameArea = {
         player1.gravitySpeed = 0.5;
         player1.jump = false;
       }
+      if (myGameArea.keys[87] == false && player2.jump == true) {
+        player2.gravitySpeed = 0.5;
+        player2.jump = false;
+      }
     })
   },
   clear : function() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 }
-
+//Funktion für Spieler und Netz
 function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   this.width = width;
   this.height = height;
@@ -138,25 +143,45 @@ function ball(width, height, color, x, y, maxX, maxY) {
 
 function updateGameArea() {
   myGameArea.clear();
+   //Für Spieler 1
   player1.speedX = 0;
   player1.speedY = 0;
-  //ball1.speedX = 0;
-  ball1.speedY = 0;
   if (myGameArea.keys && myGameArea.keys[37]) {player1.speedX = -3;}
   if (myGameArea.keys && myGameArea.keys[39]) {player1.speedX = 3;}
   if (myGameArea.keys && myGameArea.keys[38] && player1.jump == true) {player1.speedY = -8;}
-
   player1.newPos();
+  player1.update();
+  //Für Spieler 2
+  player2.speedX = 0;
+  player2.speedY = 0;
+  if (myGameArea.keys && myGameArea.keys[65]) {player2.speedX = -3;}
+  if (myGameArea.keys && myGameArea.keys[68]) {player2.speedX = 3;}
+  if (myGameArea.keys && myGameArea.keys[87] && player2.jump == true) {player2.speedY = -8;}
+  player2.newPos();
+  player2.update();
 
+//Für Ball1
+  ball1.speedY = 0;
   if (ball1.collisionp1(player1)) {
-    ball1.gravitySpeed = (-5) + ((Math.abs(((ball1.x + 10) - (player1.x + 15)) / 25)) * (2));
-    ball1.speedX = (((ball1.x + 10) - (player1.x + 15)) / 25) * 5
+    ball1.gravitySpeed = (-5) + ((Math.abs(((ball1.x + (ball1.width / 2)) - (player1.x + (player1.width / 2))) / 25)) * (2));
+    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player1.x + (player1.width / 2))) / 25) * 5
     ball1.speedY +=  -10;
+  };
+  if (ball1.collisionp1(player2)) {
+    ball1.gravitySpeed = (-5) + ((Math.abs(((ball1.x + (ball1.width / 2)) - (player2.x + (player2.width / 2))) / 25)) * (2));
+    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player2.x + (player2.width / 2))) / 25) * 5
+    ball1.speedY +=  -10;
+  };
+  if (ball1.collisionp1(myNetz)) {
+    //ball1.gravitySpeed = (-5) + ((Math.abs(((ball1.x + (ball1.width / 2)) - (myNetz.x + (myNetz.width / 2))) / 25)) * (2));
+    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (myNetz.x + (myNetz.width / 2))) / 25) * 5
+    //ball1.speedY +=  -10;
   };
 
   ball1.newPos();
-  player1.update();
   ball1.update();
+
+//Für Netz
   myNetz.update();
 
   document.getElementById("X").innerHTML = player1.x;
