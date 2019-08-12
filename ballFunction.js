@@ -13,11 +13,16 @@ function ball(width, height, color, x, y, maxX, maxY) {
     this.gravitySpeed = 0;
     this.gravityX = 0.1;
     this.gravitySpeedX = 0;
+
+    this.image = new Image();
+    this.image.src = color;
+
   
     this.update = function() {
-      ctx = myGameArea.context;
-      ctx.fillStyle = color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image,
+            this.x,
+            this.y,
+            this.width, this.height);
       }
   
     this.newPos = function() {
