@@ -10,7 +10,7 @@ function startGame() {
   player2 = new player(30, 30, "blue", 440, 120, 450, 240, 245, 0);
 
   myNetz = new player(10, 135, "green", 235, 135, 0, 0, 0, 0);
-  ball1 = new ball(20, 20, "volleyball.png", 50, 100, 460, 250); 
+  ball1 = new ball(20, 20, "volleyball.png", 230, 50, 460, 250); 
 
   bodenp1 = new boden(240, 1, "white", 0, 269);
   bodenp2 = new boden(240, 1, "white", 240, 269);
