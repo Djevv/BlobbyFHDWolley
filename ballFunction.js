@@ -63,34 +63,3 @@ function ball(width, height, color, x, y, maxX, maxY) {
     }
   
 }
-
-
-function ballMovement() {
-
-    //Für Ball1
-    ball1.speedY = 0;
-    if (ball1.collisionp1(player1)) {
-    ball1.gravitySpeed = (5) * (((ball1.y + (ball1.height / 2)) - (player1.y + (player1.height / 2))) / 25);
-    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player1.x + (player1.width / 2))) / 25) * 5
-    ball1.speedY +=  -10;
-    };
-    if (ball1.collisionp1(player2)) {
-    ball1.gravitySpeed = (5) * (((ball1.y + (ball1.height / 2)) - (player2.y + (player2.height / 2))) / 25);
-    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player2.x + (player2.width / 2))) / 25) * 5
-    ball1.speedY +=  -10;
-    };
-    if (ball1.collisionp1(myNetz)) {
-      if ((ball1.y + (ball1.height / 2)) <= myNetz.y){
-        ball1.gravitySpeed += (-1);
-      }
-    //ball1.gravitySpeed = (-5) + ((Math.abs(((ball1.x + (ball1.width / 2)) - (myNetz.x + (myNetz.width / 2))) / 25)) * (2));
-      else{
-        ball1.speedX = (((ball1.x + (ball1.width / 2)) - (myNetz.x + (myNetz.width / 2))) / 25) * 5
-      }
-  
-    //ball1.speedY +=  -10;
-    };
-
-    ball1.newPos();
-    ball1.update();
-}
