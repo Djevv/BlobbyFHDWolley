@@ -5,8 +5,8 @@ Ziel ist es den Ball über das Netz zum Gegner zu spielen und nicht den Boden be
 Sämtliche Grafiken wurden von Hand gezeichnet.
 
 # Autoren
-Philipp Lottis
-Selim Derkorn
+- Philipp Lottis
+- Selim Derkorn
 
 # Erstelldatum
 23.07.2019

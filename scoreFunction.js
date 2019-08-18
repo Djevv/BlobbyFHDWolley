@@ -1,5 +1,4 @@
-function score(width, height, color, x, y, type){
-    this.type = type;
+function score(width, height, color, x, y){
     this.width = width;
     this.height = height;
     this.x = x;
