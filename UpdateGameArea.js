@@ -52,19 +52,25 @@ function updateGameArea() {
 
   //ball1.speedY +=  -10;
   };
+  
+  if(ball1.collisionp1(bodenp1)){ 
+    scorep2.text += 1;
+    ball1.x = 440;
+    ball1.y = 50;
+
+  };
+
+  if(ball1.collisionp1(bodenp2)){
+    scorep1.text += 1;
+    ball1.x = 20;
+    ball1.y = 50;
+  };
 
   ball1.newPos();
   ball1.update();
 
-  
-  if(bodenp1.collisionBall()){ 
-
-  };
-
-  if(bodenp2.collisionBall()){
-
-  };
-  
+  scorep1.update;
+  scorep2.update;
 
   document.getElementById("X").innerHTML = player1.x;
   document.getElementById("Y").innerHTML = player1.y;
