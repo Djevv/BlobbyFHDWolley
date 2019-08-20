@@ -14,6 +14,8 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
 
   this.jump = true; //Hilfsvariable, damit nicht mehrmals gesprungen werden kann. Wird wieder auf True gesetzt wenn der Spieler den Boden berührt.
   
+  var ctx = myGameArea.canvas.getContext("2d");
+  
   this.image = new Image();
   this.image.src = color;
 

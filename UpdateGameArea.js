@@ -4,8 +4,9 @@ function updateGameArea() {
   
   
   //Für Netz + Boden und Hintergrundbild
-  bodenp1.update();
-  bodenp2.update(); 
+  
+  //bodenp1.update();
+  //bodenp2.update(); 
   background1.update();
   myNetz.update(); 
 
@@ -101,6 +102,6 @@ function ball1Updater() {
   scorep1.update;
   scorep2.update;
 
-  document.getElementById("X").innerHTML = player1.x;
-  document.getElementById("Y").innerHTML = player1.y;
+  //document.getElementById("X").innerHTML = player1.x;
+  //document.getElementById("Y").innerHTML = player1.y;
 }
