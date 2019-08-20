@@ -4,6 +4,8 @@ var ball1;
 var myNetz;
 var bodenp1;
 var bodenp2;
+var scorep1;
+var scorep2;
 
 function startGame() {
   player1 = new player(30, 30, "red", 20, 120, 206, 240, 0, 0);
@@ -15,7 +17,8 @@ function startGame() {
   bodenp1 = new boden(240, 1, "white", 0, 269);
   bodenp2 = new boden(240, 1, "white", 240, 269);
 
-  scorep1 = new score();
+  scorep1 = new score("30px", "Consolas", "black", 40, 40, "text");
+  scorep2 = new score("30px", "Consolas", "black", 280, 40, "text");
 
   myGameArea.start();
 }
