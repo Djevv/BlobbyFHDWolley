@@ -3,6 +3,7 @@ function score(width, height, color, x, y){
     this.height = height;
     this.x = x;
     this.y = y;
+    this.Score = 0;
 
     this.update = function() {
         ctx = myGameArea.context;
