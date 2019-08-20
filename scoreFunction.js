@@ -9,6 +9,6 @@ function score(width, height, color, x, y){
         ctx = myGameArea.context;
         ctx.font = this.width + " " + this.height;
         ctx.fillStyle = color;
-        ctx.fillText(this.text, this.x, this.y);
+        ctx.fillText(this.Score, this.x, this.y);
     }
 }

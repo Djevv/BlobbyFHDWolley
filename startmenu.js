@@ -1,10 +1,10 @@
-function startmenu() {
+function startMenu() {
     var background1 = new image("strand1.png");
 
-    mystartmenu.start();
+    myStartMenu.start();
 }
 
-var mystartmenu = {
+var myStartMenu = {
     canvas : document.createElement("canvas"),
     start : function() {
       this.canvas.width = 960 
