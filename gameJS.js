@@ -6,7 +6,6 @@ var bodenp1;
 var bodenp2;
 var ballPointer1;
 var scorep1;
-var scorep2;
 
 function startGame() {
   background1 = new image("strand1.png");
@@ -18,8 +17,10 @@ function startGame() {
   ball1 = new ball(40, 40, "volleyball.png", player1.x, 100, 920, 500);
   ballPointer1 = new ballPointer(40, 20, "yellow", 5);
 
-  scorep1 = new score("30px", "Consolas", "black", 40, 40, "text");
-  scorep2 = new score("30px", "Consolas", "black", 280, 40, "text");
+  bodenp1 = new boden(480, 1, "white", 0, 538);
+  bodenp2 = new boden(480, 1, "white", 480, 538);
+
+  scorep1 = new score(500, 100, "black", 60, 100);
 
   myGameArea.start();
 }
