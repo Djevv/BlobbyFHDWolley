@@ -13,6 +13,7 @@ function ball(width, height, color, x, y, maxX, maxY) {
   this.gravitySpeed = 0;
   this.gravityX = 0.2;
   this.gravitySpeedX = 0;
+  this.firsthit = false;
 
   this.image = new Image();
   this.image.src = color;
@@ -26,19 +27,23 @@ function ball(width, height, color, x, y, maxX, maxY) {
     }
 
   this.newPos = function() {
-    if ((this.x + this.speedX) >= this.minX && (this.x + this.speedX) <= this.maxX) {
-      //this.gravitySpeedX += this.gravityX;
-      this.x = this.x + this.speedX; 
-    } else {
-      this.speedX *= (-1);
-    }
+    if(ball1.firsthit){
 
-    if ((this.y + this.speedY + this.gravitySpeed) >= this.minY && (this.y + this.speedY + this.gravitySpeed) <= this.maxY) {
-      this.gravitySpeed += this.gravity;
-      this.y = this.y + this.speedY + this.gravitySpeed;
-    } else {
-      this.gravitySpeed = 0;
-      this.gravitySpeedX = 0;
+      if ((this.x + this.speedX) >= this.minX && (this.x + this.speedX) <= this.maxX) {
+        //this.gravitySpeedX += this.gravityX;
+        this.x = this.x + this.speedX; 
+      } else {
+        this.speedX *= (-1);
+      }
+
+      if ((this.y + this.speedY + this.gravitySpeed) >= this.minY && (this.y + this.speedY + this.gravitySpeed) <= this.maxY) {
+        this.gravitySpeed += this.gravity;
+        this.y = this.y + this.speedY + this.gravitySpeed;
+      } else {
+        this.gravitySpeed = 0;
+        this.gravitySpeedX = 0;
+      }
+
     }
   }
 

@@ -18,18 +18,25 @@ function updateGameArea() {
   ballPointer1.newPos();
   ballPointer1.update();
 
-  /*if(ball1.collisionp1(bodenp1)){ 
+  if(ball1.collisionp1(bodenp1)){ 
     scorep2.text += 1;
-    ball1.x = 440;
-    ball1.y = 50;
+    ball1.x = (myGameArea.canvas.width / 4) * 3;
+    ball1.y = 280;
 
+    ball1.firsthit = false;
+    scorep2.Score += 1;
+    console.log("Player 2 Score: " + scorep2.Score);
   };
 
   if(ball1.collisionp1(bodenp2)){
     scorep1.text += 1;
-    ball1.x = 20;
-    ball1.y = 50;
-  };*/
+    ball1.x = myGameArea.canvas.width / 4;
+    ball1.y = 280;
+
+    ball1.firsthit = false;
+    scorep1.Score += 1;
+    console.log("Player 1 Score: " + scorep1.Score);
+  };
 
   ball1Updater();
 
@@ -67,15 +74,17 @@ function ball1Updater() {
 
     //Testing if ball collides with player1 and calculating the new speed and angle for the ball if true
     if (ball1.collisionp1(player1)) {
+    ball1.firsthit = true;
     ball1.gravitySpeed = (12) * (((ball1.y + (ball1.height / 2)) - (player1.y + (player1.height / 2))) / ((player1.height + ball1.height) / 2));
-    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player1.x + (player1.width / 2))) / ((player1.width + ball1.width) / 2)) * 10
+    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player1.x + (player1.width / 2))) / ((player1.width + ball1.width) / 2)) * 10;
     ball1.speedY +=  -10;
     };
 
     //Testing if ball collides with player2 and calculating the new speed and angle for the ball if true
     if (ball1.collisionp1(player2)) {
+    ball1.firsthit = true;
     ball1.gravitySpeed = (12) * (((ball1.y + (ball1.height / 2)) - (player2.y + (player2.height / 2))) / ((player2.height + ball1.height) / 2));
-    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player2.x + (player2.width / 2))) / ((player2.width + ball1.width) / 2)) * 10
+    ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player2.x + (player2.width / 2))) / ((player2.width + ball1.width) / 2)) * 10;
     ball1.speedY +=  -10;
     };
 

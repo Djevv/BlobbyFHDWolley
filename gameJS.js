@@ -11,18 +11,18 @@ var scorep2;
 function startGame() {
   background1 = new image("strand1.png");
 
-  player1 = new player(60, 120, "player1.png", 40, 240, 412, 420, 0, 0);
-  player2 = new player(60, 120, "player2.png", 880, 240, 900, 420, 490, 0);
+  player1 = new player(60, 120, "player1.png", 40, 415, 412, 420, 0, 0);
+  player2 = new player(60, 120, "player2.png", 880, 415, 900, 420, 490, 0);
 
   myNetz = new player(20, 270, "netz.png", 470, 270, 0, 0, 0, 0);
-  ball1 = new ball(40, 40, "volleyball.png", player1.x, 100, 920, 500);
+  ball1 = new ball(40, 40, "volleyball.png", (player1.x + 100), 280, 920, 500);
   ballPointer1 = new ballPointer(40, 20, "yellow", 5);
 
   bodenp1 = new boden(480, 1, "white", 0, 538);
   bodenp2 = new boden(480, 1, "white", 480, 538);
 
-  scorep1 = new score("30px", "Consolas", "black", 40, 40, "text");
-  scorep2 = new score("30px", "Consolas", "black", 280, 40, "text");
+  scorep1 = new score("150px", "Consolas", "black", 50, 60);
+  scorep2 = new score("150px", "Consolas", "black", 860, 60);
 
   myGameArea.start();
 }
@@ -30,10 +30,8 @@ function startGame() {
 var myGameArea = {
   canvas : document.createElement("canvas"),
   start : function() {
-    this.relation = ((window.innerWidth)*0.85) / 480;
-    this.canvas.width = 960 //* this.relation;
-    //this.canvas.width = window.screen.width * window.devicePixelRatio;
-    this.canvas.height = 540 //* this.relation;
+    this.canvas.width = 960 
+    this.canvas.height = 540 
     this.context = this.canvas.getContext("2d");
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     this.interval = setInterval(updateGameArea, 20);   // Game Loop mit 20fps
