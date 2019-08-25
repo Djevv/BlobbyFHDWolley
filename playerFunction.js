@@ -11,6 +11,7 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   this.minY = minY;
   this.gravity = 0.4;
   this.gravitySpeed = 0;
+  this.hits = 0;
 
   this.jump = true; //Hilfsvariable, damit nicht mehrmals gesprungen werden kann. Wird wieder auf True gesetzt wenn der Spieler den Boden berührt.
   
