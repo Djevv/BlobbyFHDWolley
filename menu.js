@@ -4,9 +4,9 @@ function startmenu(){
     myGameArea.start();
     myGameArea.interval = setInterval(updateGamemenu, 20);
     //startGame();
-    button1 = new Button(410, 300, 140, 60, "startbutton1");
+    
     backgroundStart = new image("startmenu1.png");
-
+    button1 = new Button(410, 300, 140, 60, "startbutton1.png");
 }
 
 
@@ -15,6 +15,9 @@ function Button(x, y, width, height, color){
     this.y = y;
     this.width = width;
     this.height = height;
+    this.color = color;
+
+    ctx = myGameArea.context;
 
     this.image = new Image();
     this.image.src = color;
@@ -71,13 +74,9 @@ function updateGamemenu(){
         if (button1.clicked()) {
           myGameArea.stop();  
           startGame();
-    
         }
     }
 
     backgroundStart.update();
     button1.update();
-
-    
-    
 }
