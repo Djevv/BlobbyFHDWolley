@@ -40,7 +40,7 @@ var myGameArea = {
     this.canvas.height = 540 
     this.context = this.canvas.getContext("2d");
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-    this.interval = 0;   // Game Loop mit 20fps
+    //this.interval = 0;   // Game Loop mit 20fps
     
     window.addEventListener('keydown', function (e) {
       myGameArea.keys = (myGameArea.keys || []);
@@ -59,12 +59,12 @@ var myGameArea = {
       }
     })
     window.addEventListener('mousedown', function (e) {
-      mouseX = e.pageX;
-      mouseY = e.pageY;
+      myGameArea.x = e.pageX;
+      myGameArea.y = e.pageY;
     })
     window.addEventListener('mouseup', function (e) {
-      mouseX = false;
-      mouseY = false;
+      myGameArea.x = false;
+      myGameArea.y = false;
     })
   },
   clear : function() {

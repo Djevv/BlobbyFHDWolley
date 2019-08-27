@@ -46,9 +46,11 @@ function updateGameArea() {
     ball1.firsthit = false;
     scorep2.Score += 1;
     scorep2.text = "Player 2 Score: " + scorep2.Score;
-    console.log(scorep2.text);
+    //console.log(scorep2.text);
     player1.hits = 0;
     player2.hits = 0;
+    console.log(player1.hits);
+    console.log(player2.hits);
   };
 
   if(ball1.collisionp1(bodenp2) || player2.hits == 4){
@@ -59,9 +61,11 @@ function updateGameArea() {
     ball1.firsthit = false;
     scorep1.Score += 1;
     scorep1.text = "Player 1 Score: " + scorep1.Score;
-    console.log("Player 1 Score: " + scorep1.Score);
+    //console.log("Player 1 Score: " + scorep1.Score);
     player1.hits = 0;
     player2.hits = 0;
+    console.log(player1.hits);
+    console.log(player2.hits);
   };
 
   ball1Updater();
@@ -110,6 +114,8 @@ function ball1Updater() {
     ball1.speedY +=  -10;
     player1.hits += 1;
     player2.hits = 0;
+    console.log(player1.hits);
+    console.log(player2.hits);
     };
 
     //Testing if ball collides with player2 and calculating the new speed and angle for the ball if true
@@ -120,6 +126,8 @@ function ball1Updater() {
     ball1.speedY +=  -10;
     player2.hits += 1;
     player1.hits = 0;
+    console.log(player1.hits);
+    console.log(player2.hits);
     };
 
     //Testing if ball collides with net

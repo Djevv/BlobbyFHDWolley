@@ -4,22 +4,27 @@ function startmenu(){
     myGameArea.start();
     myGameArea.interval = setInterval(updateGamemenu, 20);
     //startGame();
-    button1 = new Button(400, 250, 70, 30, "black");
+    button1 = new Button(410, 300, 140, 60, "startbutton1");
+    backgroundStart = new image("startmenu1.png");
 
 }
 
 
-function Button(x, y, width, height, color, fn){
+function Button(x, y, width, height, color){
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
 
-    this.update = function(){
-        ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-        }
+    this.image = new Image();
+    this.image.src = color;
+
+    this.update = function() {
+        ctx.drawImage(this.image,
+            this.x,
+            this.y,
+            this.width, this.height);
+    }
     
     this.clicked = function() {
     var myleft = this.x;
@@ -61,15 +66,18 @@ function checkClick(mouseEvent){
 function updateGamemenu(){
     myGameArea.clear();
     //draw();
-    button1.update();
 
-    if (mouseX && mouseY) {
+    if (myGameArea.x && myGameArea.y) {
         if (button1.clicked()) {
           myGameArea.stop();  
           startGame();
     
         }
     }
+
+    backgroundStart.update();
+    button1.update();
+
     
     
 }
