@@ -30,7 +30,6 @@ function ball(width, height, color, x, y, maxX, maxY) {
     if(ball1.firsthit){
 
       if ((this.x + this.speedX) >= this.minX && (this.x + this.speedX) <= this.maxX) {
-        //this.gravitySpeedX += this.gravityX;
         this.x = this.x + this.speedX; 
       } else {
         this.speedX *= (-1);
@@ -46,7 +45,7 @@ function ball(width, height, color, x, y, maxX, maxY) {
 
     }
   }
-
+  //collisiontest with players
   this.collisionp1 = function(player1) {
     var bLeft = this.x;
     var bRight = this.x + (this.width);

@@ -1,3 +1,4 @@
+//Some yellow bracket that shows the position of the ball in case it leaves the canvas
 function ballPointer(width, height, color, y) {
     this.width = width;
     this.height = height;
@@ -6,7 +7,7 @@ function ballPointer(width, height, color, y) {
 
     this.newPos = function() {
         this.x = ball1.x;
-        this.y = 5;
+        this.y = 8;
     }
     this.update = function() { 
         if(ball1.y < 0){

@@ -13,7 +13,7 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   this.gravitySpeed = 0;
   this.hits = 0;
 
-  this.jump = true; //Hilfsvariable, damit nicht mehrmals gesprungen werden kann. Wird wieder auf True gesetzt wenn der Spieler den Boden berührt.
+  this.jump = true; //Is used to prevent infinite jumping. Is set to false after first jump and gets set back to true if player touches the floor again
   
   this.image = new Image();
   this.image.src = color;
@@ -34,11 +34,11 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   */
   this.newPos = function() {
 
-  //Funktion dient dazu das Spielfeld für den Spieler auf der X-Achse zu begrenzen.
+  //Limiting the Movement Range for the player on the X range
   if ((this.x + this.speedX) >= minX && (this.x + this.speedX) <= maxX) {  
     this.x += this.speedX;
   }
-  //Funktion dient das Spielfeld für den Spieler auf der Y-Achse zu begrenzen.
+  //Limiting the Movement Range for the player on the Y range
   if ((this.y + this.speedY + this.gravitySpeed) >= minY && (this.y + this.speedY + this.gravitySpeed) <= maxY) { 
     this.gravitySpeed += this.gravity;
     this.y = this.y + this.speedY + this.gravitySpeed;

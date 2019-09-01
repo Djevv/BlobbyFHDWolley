@@ -112,6 +112,7 @@ function ball1Updater() {
     ball1.gravitySpeed = (12) * (((ball1.y + (ball1.height / 2)) - (player1.y + (player1.height / 2))) / ((player1.height + ball1.height) / 2));
     ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player1.x + (player1.width / 2))) / ((player1.width + ball1.width) / 2)) * 10;
     ball1.speedY +=  -10;
+    
     player1.hits += 1;
     player2.hits = 0;
     console.log(player1.hits);
@@ -124,7 +125,8 @@ function ball1Updater() {
     ball1.gravitySpeed = (12) * (((ball1.y + (ball1.height / 2)) - (player2.y + (player2.height / 2))) / ((player2.height + ball1.height) / 2));
     ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player2.x + (player2.width / 2))) / ((player2.width + ball1.width) / 2)) * 10;
     ball1.speedY +=  -10;
-    player2.hits += 1;
+
+        player2.hits += 1;
     player1.hits = 0;
     console.log(player1.hits);
     console.log(player2.hits);
