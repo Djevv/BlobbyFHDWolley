@@ -80,7 +80,7 @@ function updateGameArea() {
 }
 
 function p1Updater(){
-  //Für Spieler 1
+  //For player 1
   player1.speedX = 0;
   player1.speedY = 0;
   if (myGameArea.keys && myGameArea.keys[65]) {player1.speedX = -7;}
@@ -91,7 +91,7 @@ function p1Updater(){
 }
 
 function p2Updater() {
-  //Für Spieler 2
+  //For player 2
 
   player2.speedX = 0;
   player2.speedY = 0;
@@ -103,7 +103,6 @@ function p2Updater() {
 }
 
 function ball1Updater() {
-    //Für Ball1
     ball1.speedY = 0;
 
     //Testing if ball collides with player1 and calculating the new speed and angle for the ball if true
@@ -112,7 +111,7 @@ function ball1Updater() {
     ball1.gravitySpeed = (12) * (((ball1.y + (ball1.height / 2)) - (player1.y + (player1.height / 2))) / ((player1.height + ball1.height) / 2));
     ball1.speedX = (((ball1.x + (ball1.width / 2)) - (player1.x + (player1.width / 2))) / ((player1.width + ball1.width) / 2)) * 10;
     ball1.speedY +=  -10;
-    
+
     player1.hits += 1;
     player2.hits = 0;
     console.log(player1.hits);
