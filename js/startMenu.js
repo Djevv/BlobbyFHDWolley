@@ -1,5 +1,5 @@
-function startMenu() {
-    var background1 = new image("strand1.png");
+/*function startMenu() {
+    var background1 = new image("assets/strand1.png");
 
     myStartMenu.start();
 }
@@ -18,3 +18,4 @@ var myStartMenu = {
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
+*/

@@ -5,8 +5,8 @@ function startmenu(){
     myGameArea.interval = setInterval(updateGamemenu, 20);
     //startGame();
     
-    backgroundStart = new image("startmenu1.png");
-    button1 = new Button(410, 300, 140, 60, "startbutton1.png");
+    backgroundStart = new image("assets/startmenu1.png");
+    button1 = new Button(410, 300, 140, 60, "assets/startbutton1.png");
 }
 
 

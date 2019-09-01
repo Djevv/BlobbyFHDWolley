@@ -13,13 +13,13 @@ var mouseY;
 
 function startGame() {
   //$('#game-menu').hide();
-  background1 = new image("strand1.png");
+  background1 = new image("assets/strand1.png");
 
-  player1 = new player(60, 120, "player1.png", 40, 415, 412, 420, 0, 0);
-  player2 = new player(60, 120, "player2.png", 880, 415, 900, 420, 490, 0);
+  player1 = new player(60, 120, "assets/player1.png", 40, 415, 412, 420, 0, 0);
+  player2 = new player(60, 120, "assets/player2.png", 880, 415, 900, 420, 490, 0);
 
-  myNetz = new player(20, 270, "netz.png", 470, 270, 0, 0, 0, 0);
-  ball1 = new ball(40, 40, "volleyball.png", (player1.x + 100), 280, 920, 500);
+  myNetz = new player(20, 270, "assets/netz.png", 470, 270, 0, 0, 0, 0);
+  ball1 = new ball(40, 40, "assets/volleyball.png", (player1.x + 100), 280, 920, 500);
   ballPointer1 = new ballPointer(40, 20, "yellow", 5);
 
   bodenp1 = new boden(480, 1, "white", 0, 538);
