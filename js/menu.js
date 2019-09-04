@@ -71,7 +71,9 @@ function updateGameTutorial(){
 
   window.addEventListener('mousedown', function (e) {
     myGameArea.stop(); 
-    startmenu();
+    myGameArea.start();
+    myGameArea.interval = setInterval(updateGamemenu, 20);
+    
     
   })
 
