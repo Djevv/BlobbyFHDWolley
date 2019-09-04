@@ -18,7 +18,7 @@ function startGame() {
   player2 = new player(60, 120, "assets/images/player2.png", 880, 415, 900, 420, 490, 0);
 
   myNetz = new player(20, 270, "assets/images/netz.png", 470, 270, 0, 0, 0, 0);
-  ball1 = new ball(40, 40, "assets/images/volleyball.png", (player1.x + 100), 280, 920, 500);
+  ball1 = new ball(40, 40, "assets/images/volleyball1.png", (player1.x + 100), 280, 920, 500);
   ballPointer1 = new ballPointer(40, 10, "yellow", 5);
 
   bodenp1 = new boden(480, 1, "white", 0, 538);
