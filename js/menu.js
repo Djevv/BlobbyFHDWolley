@@ -3,7 +3,6 @@ var startbutton;
 function startmenu(){
   myGameArea.start();
   myGameArea.interval = setInterval(updateGamemenu, 20);
-  //startGame();
   
   backgroundStart = new image("assets/startmenu1.png");
   startbutton = new button(410, 250, 140, 60, "assets/startbutton1.png");
@@ -54,10 +53,27 @@ function updateGamemenu(){
       myGameArea.stop();  
       startGame();
     }
-  }
-
+    if(tutorialbutton.clicked()){
+      myGameArea.stop(); 
+      myGameArea.start();
+      myGameArea.interval = setInterval(updateGameTutorial, 20);
+      backgroundTutorial = new image("assets/tutorialscreen1.png");
+    }
+}
   backgroundStart.update();
   startbutton.update();
   tutorialbutton.update();
   creditbutton.update();
+}
+
+function updateGameTutorial(){
+  myGameArea.clear();
+
+  window.addEventListener('mousedown', function (e) {
+    myGameArea.stop(); 
+    startmenu();
+    
+  })
+
+  backgroundTutorial.update();
 }
