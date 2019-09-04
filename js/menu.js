@@ -1,4 +1,4 @@
-var button1;
+var startbutton;
 
 function startmenu(){
     myGameArea.start();
@@ -6,7 +6,9 @@ function startmenu(){
     //startGame();
     
     backgroundStart = new image("assets/startmenu1.png");
-    button1 = new button(410, 300, 280, 120, "assets/startbutton1.png");
+    startbutton = new button(410, 250, 280, 120, "assets/startbutton1.png");
+    tutorialbutton = new button(410, 320, 280, 120, "assets/tutorialbutton1.png");
+    creditbutton = new button(410, 390, 280, 120, "assets/creditsbutton1.png");
 }
 
 
@@ -47,12 +49,14 @@ function updateGamemenu(){
     //draw();
 
     if (myGameArea.x && myGameArea.y) {
-        if (button1.clicked()) {
+        if (startbutton.clicked()) {
           myGameArea.stop();  
           startGame();
         }
     }
 
     backgroundStart.update();
-    button1.update();
+    startbutton.update();
+    tutorialbutton.update();
+    creditbutton.update();
 }
