@@ -1,6 +1,8 @@
 function ball1Updater() {
   ball1.speedY = 0;
 
+  if(ball1.firsthit){ball1.angle += 10 * Math.PI / 180;}; 
+
   //Testing if ball collides with player1 and calculating the new speed and angle for the ball if true
   if (ball1.collisionp1(player1) && ball1.p1hit == true) {
   ball1.firsthit = true;
@@ -10,8 +12,6 @@ function ball1Updater() {
 
   //if(ball1.p1hit){player1.hits += 1;} else {console.log("Hotcount denied")}
   //player2.hits = 0;
-  //console.log("p1 hits: " + player1.hits);
-  //console.log("p2 hits: " + player2.hits);
   randomDonk();
   ball1.p1hit = false;
   setTimeout(ball1.setHitTrue(), 50);
@@ -27,8 +27,6 @@ function ball1Updater() {
 
   //if(ball1.p2hit){player2.hits += 1;} else {console.log("Hotcount denied")}
   //player1.hits = 0;
-  //console.log("p1 hits: " + player1.hits);
-  //console.log("p2 hits: " + player2.hits);
   randomDonk();
   ball1.p2hit = false;
   setTimeout(ball1.setHitTrue(), 1000);

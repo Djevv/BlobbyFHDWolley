@@ -14,21 +14,30 @@ function ball(width, height, color, x, y, maxX, maxY) {
   this.gravityX = 0.2;
   this.gravitySpeedX = 0;
   this.firsthit = false;
+  this.angle = 0;
 
   
   this.p1hit = true;
   this.p2hit = true;
-  
+
+  this.bWidth = width;
+  this.bHeight = height;
 
   this.image = new Image();
   this.image.src = color;
 
 
   this.update = function() {
+    ctx.save();
+    ctx.translate(this.x + 20, this.y + 20);
+    ctx.rotate(this.angle);
+
     ctx.drawImage(this.image,
-      this.x,
-      this.y,
-      this.width, this.height);
+      this.bWidth / -2,
+      this.bHeight / -2,
+      this.bWidth, this.bHeight);
+    
+    ctx.restore();
   }
 
   this.newPos = function() {
