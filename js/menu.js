@@ -4,10 +4,10 @@ function startmenu(){
   myGameArea.start();
   myGameArea.interval = setInterval(updateGamemenu, 20);
   
-  backgroundStart = new image("assets/startmenu1.png");
-  startbutton = new button(410, 250, 140, 60, "assets/startbutton1.png");
-  tutorialbutton = new button(410, 320, 140, 60, "assets/tutorialbutton1.png");
-  creditbutton = new button(410, 390, 140, 60, "assets/creditsbutton1.png");
+  backgroundStart = new image("assets/images/startmenu1.png");
+  startbutton = new button(410, 250, 140, 60, "assets/images/startbutton1.png");
+  tutorialbutton = new button(410, 320, 140, 60, "assets/images/tutorialbutton1.png");
+  creditbutton = new button(410, 390, 140, 60, "assets/images/creditsbutton1.png");
 }
 
 
@@ -57,7 +57,7 @@ function updateGamemenu(){
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGameTutorial, 20);
-      backgroundTutorial = new image("assets/tutorialscreen1.png");
+      backgroundTutorial = new image("assets/images/tutorialscreen1.png");
     }
 }
   backgroundStart.update();

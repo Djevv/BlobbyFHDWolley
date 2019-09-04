@@ -15,16 +15,21 @@ function ball(width, height, color, x, y, maxX, maxY) {
   this.gravitySpeedX = 0;
   this.firsthit = false;
 
+  
+  this.p1hit = true;
+  this.p2hit = true;
+  
+
   this.image = new Image();
   this.image.src = color;
 
 
   this.update = function() {
-      ctx.drawImage(this.image,
-          this.x,
-          this.y,
-          this.width, this.height);
-    }
+    ctx.drawImage(this.image,
+      this.x,
+      this.y,
+      this.width, this.height);
+  }
 
   this.newPos = function() {
     if(ball1.firsthit){
@@ -65,5 +70,10 @@ function ball(width, height, color, x, y, maxX, maxY) {
     }
     return collision;
   }
-
+  
+  this.setHitTrue = function(){
+    this.p1hit = true;
+    this.p2hit = true;
+  }
+  
 }

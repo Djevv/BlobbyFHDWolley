@@ -11,7 +11,7 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   this.minY = minY;
   this.gravity = 0.4;
   this.gravitySpeed = 0;
-  this.hits = 0;
+  this.hits = 0; 
 
   this.jump = true; //Is used to prevent infinite jumping. Is set to false after first jump and gets set back to true if player touches the floor again
   
@@ -34,18 +34,19 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   */
   this.newPos = function() {
 
-  //Limiting the Movement Range for the player on the X range
-  if ((this.x + this.speedX) >= minX && (this.x + this.speedX) <= maxX) {  
-    this.x += this.speedX;
+    //Limiting the Movement Range for the player on the X range
+    if ((this.x + this.speedX) >= minX && (this.x + this.speedX) <= maxX) {  
+      this.x += this.speedX;
+    }
+    //Limiting the Movement Range for the player on the Y range
+    if ((this.y + this.speedY + this.gravitySpeed) >= minY && (this.y + this.speedY + this.gravitySpeed) <= maxY) { 
+      this.gravitySpeed += this.gravity;
+      this.y = this.y + this.speedY + this.gravitySpeed;
+    } else {
+      this.gravitySpeed = 0;
+      this.jump = true;
+    }
   }
-  //Limiting the Movement Range for the player on the Y range
-  if ((this.y + this.speedY + this.gravitySpeed) >= minY && (this.y + this.speedY + this.gravitySpeed) <= maxY) { 
-    this.gravitySpeed += this.gravity;
-    this.y = this.y + this.speedY + this.gravitySpeed;
-  } else {
-    this.gravitySpeed = 0;
-    this.jump = true;
-  }
-  }
+
 }
   

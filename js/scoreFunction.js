@@ -13,3 +13,24 @@ function score(width, height, color, x, y, text){
         ctx.fillText(this.text, this.x, this.y);
     }
 }
+
+function checkScore() {
+    myGameArea.stop();
+
+    if(scorep1.Score == 3){
+    ctx = myGameArea.context;
+        ctx.font = "20px" + " " + "Consolas";
+        ctx.fillStyle = "black";
+        ctx.fillText("Player 1 wins!", 450, 200);
+    }
+    if(scorep2.Score == 3){
+        ctx = myGameArea.context;
+            ctx.font = "20px" + " " + "Consolas";
+            ctx.fillStyle = "black";
+            ctx.fillText("Player 2 wins!", 450, 200);
+        }
+    setTimeout(function(){ 
+        myGameArea.start();
+        myGameArea.interval = setInterval(updateGamemenu, 20);
+    }, 5000);
+}
