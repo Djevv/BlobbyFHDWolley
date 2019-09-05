@@ -11,17 +11,23 @@ function ball(width, height, color, x, y, maxX, maxY) {
   this.minY = -500;
   this.gravity = 0.2;
   this.gravitySpeed = 0;
-  this.gravityX = 0.2;
-  this.gravitySpeedX = 0;
   this.firsthit = false;
   this.angle = 0;
 
+  //copies of variables used by the resize function
+  this.cWidth = width;
+  this.cHeight = height;
+  this.cX = x;
+  this.cY = y;
+  this.cMaxX = maxX;
+  this.cMaxY = maxY;
+  this.cGravity = 0.2;
+  //this.cMinX = minX;
+  //this.cMinY = minY;
   
   this.p1hit = true;
   this.p2hit = true;
 
-  this.bWidth = width;
-  this.bHeight = height;
 
   this.image = new Image();
   this.image.src = color;
@@ -29,15 +35,27 @@ function ball(width, height, color, x, y, maxX, maxY) {
 
   this.update = function() {
     ctx.save();
-    ctx.translate(this.x + 20, this.y + 20);
+    ctx.translate(this.x + (20)*sca, this.y + (20)*sca);
     ctx.rotate(this.angle);
 
     ctx.drawImage(this.image,
-      this.bWidth / -2,
-      this.bHeight / -2,
-      this.bWidth, this.bHeight);
+      this.width / -2,
+      this.height / -2,
+      this.width, this.height);
     
     ctx.restore();
+  }
+
+  this.fResize = function() {
+    //console.log(this.maxX);
+    this.width = sca * this.cWidth;
+    this.height = sca * this.cHeight;
+    this.x = sca * this.cX;
+    this.y = sca * this.cY;
+    this.maxX = sca * this.cMaxX;
+    this.maxY = sca * this.cMaxY;
+    this.gravity = sca * this.cGravity;
+
   }
 
   this.newPos = function() {

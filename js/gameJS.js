@@ -9,7 +9,6 @@ var scorep1;
 var scorep2;
 var mouseX;
 var mouseY;
-//var hitsound;
 
 function startGame() {
   background1 = new image("assets/images/strand1.png");
@@ -28,7 +27,7 @@ function startGame() {
   scorep2 = new score("20px", "Consolas", "black", 750, 60, "Player 2 Score: 0");
 
   specialDonk = new sound("assets/sounds/donk1.mp3");
-  
+  gamestarted = true;
   myGameArea.start();
   myGameArea.interval = setInterval(updateGameArea, 20);
 }
@@ -36,8 +35,9 @@ function startGame() {
 var myGameArea = {
   canvas : document.createElement("canvas"),
   start : function() {
-    this.canvas.width = 960 
-    this.canvas.height = 540 
+    this.canvas.width = 960;
+    this.canvas.height = 540;
+    //resize();
     this.context = this.canvas.getContext("2d");
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     
@@ -45,6 +45,7 @@ var myGameArea = {
       myGameArea.keys = (myGameArea.keys || []);
       myGameArea.keys[e.keyCode] = true;
     })
+
 
     window.addEventListener('keyup', function (e) {
       myGameArea.keys[e.keyCode] = false;

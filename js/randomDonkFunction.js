@@ -13,5 +13,5 @@ function randomDonk(){
     specialDonk.sound.src = manyDonks[rn];
     specialDonk.play();
 
-    console.log(rn);
+    //console.log(rn);
 }

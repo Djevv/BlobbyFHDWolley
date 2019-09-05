@@ -4,12 +4,25 @@ function boden(width, height, color, x, y) {
     this.x = x;
     this.y = y;
 
+    this.cWidth = width;
+    this.cHeight = height;
+    this.cX = x;
+    this.cY = y;
+
     this.update = function() {
         ctx = myGameArea.context;
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
         }
+    
+    this.fResize = function() {
 
+        //console.log(this.maxX);
+        this.width = sca * this.cWidth;
+        this.height = sca * this.cHeight;
+        this.x = sca * this.cX;
+        this.y = sca * this.cY;    
+        }
 
     this.collisionBall = function(ball1) {
         var bLeft = this.x;

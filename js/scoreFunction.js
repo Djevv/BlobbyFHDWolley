@@ -16,7 +16,7 @@ function score(width, height, color, x, y, text){
 
 function checkScore() {
     myGameArea.stop();
-
+    gamestarted = false;
     if(scorep1.Score == 3){
     ctx = myGameArea.context;
         ctx.font = "20px" + " " + "Consolas";
@@ -32,5 +32,6 @@ function checkScore() {
     setTimeout(function(){ 
         myGameArea.start();
         myGameArea.interval = setInterval(updateGamemenu, 20);
+        menustarted = true;
     }, 5000);
 }
