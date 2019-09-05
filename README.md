@@ -1,14 +1,17 @@
-# FHDWolley
-Ein kleines Retro-game, welches sich am Klassiker "Blobby Volley" orientiert. 
-Ziel ist es den Ball über das Netz zum Gegner zu spielen und nicht den Boden berühren zu lassen.
+# FHD-Wolley
+A small retro-game which is oriented at "Blobby Volley".
+The objective of the game is to achieve 12 points by having the ball touch the opponents floor!
 
-Sämtliche Grafiken wurden von Hand gezeichnet.
 
-# Autoren
+
+# Licence
+All assets are made by ourselve.
+
+# Authors
 - Philipp Lottis
 - Selim Derkorn
 
-# Erstelldatum
+# Date of creation
 23.07.2019
 
 # Hinweise zum Vorgehen bei der Entwicklung dieser Software

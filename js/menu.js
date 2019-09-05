@@ -1,13 +1,19 @@
 var startbutton;
+var clickWait = false;
 
 function startmenu(){
   myGameArea.start();
-  myGameArea.interval = setInterval(updateGamemenu, 20);
+  myGameArea.interval = setInterval(updateGamemenu, 1);
   
   backgroundStart = new image("assets/images/startmenu1.png");
   startbutton = new button(410, 250, 140, 60, "assets/images/startbutton1.png");
   tutorialbutton = new button(410, 320, 140, 60, "assets/images/tutorialbutton1.png");
   creditbutton = new button(410, 390, 140, 60, "assets/images/creditsbutton1.png");
+
+  tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/tutorialbutton1.png");
+  startbutton2 = new button(770, 440, 140, 60, "assets/images/startbutton1.png");
+
+  updateGamemenu();
 }
 
 
@@ -50,16 +56,17 @@ function updateGamemenu(){
 
   if (myGameArea.x && myGameArea.y) {
     if (startbutton.clicked()) {
-      myGameArea.stop();  
-      startGame();
+        myGameArea.stop();  
+        startGame();
+        //myGameArea.interval = setInterval(updateGameTutorial, 1);
     }
     if(tutorialbutton.clicked()){
       myGameArea.stop(); 
       myGameArea.start();
-      myGameArea.interval = setInterval(updateGameTutorial, 20);
+      myGameArea.interval = setInterval(updateGameTutorial, 1);
       backgroundTutorial = new image("assets/images/tutorialscreen1.png");
     }
-}
+  }
   backgroundStart.update();
   startbutton.update();
   tutorialbutton.update();
@@ -68,14 +75,24 @@ function updateGamemenu(){
 
 function updateGameTutorial(){
   myGameArea.clear();
+  
+  
+  if (myGameArea.x && myGameArea.y) {
+    if (tutorialbuttonBack.clicked()){
+      myGameArea.stop(); 
+      myGameArea.start();
+      myGameArea.interval = setInterval(updateGamemenu, 1);
+    }
+    if (startbutton2.clicked()){
+      myGameArea.stop(); 
+      startGame();
+    }
+  }
+  
+  
 
-  window.addEventListener('mousedown', function (e) {
-    myGameArea.stop(); 
-    myGameArea.start();
-    myGameArea.interval = setInterval(updateGamemenu, 20);
-    
-    
-  })
-
+  
   backgroundTutorial.update();
+  tutorialbuttonBack.update();
+  startbutton2.update();
 }

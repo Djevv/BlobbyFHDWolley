@@ -80,6 +80,7 @@ function ball(width, height, color, x, y, maxX, maxY) {
     return collision;
   }
   
+  
   this.setHitTrue = function(){
     this.p1hit = true;
     this.p2hit = true;
