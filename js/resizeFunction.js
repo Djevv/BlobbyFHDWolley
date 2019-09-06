@@ -29,8 +29,8 @@ function resize(){
     bodenp1.fResize();
     bodenp2.fResize();
     ball1.fResize();
-    //scorep1.fResize();
-    //scorep2.fResize();
+    scorep1.fResize();
+    scorep2.fResize();
   }
 
   if(menustarted){
@@ -39,7 +39,10 @@ function resize(){
     creditbutton.fResize();
     
   }
-
+  if(tutorialstarted){
+    tutorialbuttonBack.fResize();
+    startbutton2.fResize();
+  }
 
   }
 

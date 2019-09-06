@@ -13,6 +13,9 @@ function startmenu(){
   tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/tutorialbutton1.png");
   startbutton2 = new button(770, 440, 140, 60, "assets/images/startbutton1.png");
 
+  menustarted = true;
+  resize();
+
   updateGamemenu();
 }
 
@@ -26,6 +29,14 @@ function button(x, y, width, height, color){
   this.bWidth = width;
   this.bHeight = height;
 
+  //copies of variables used by the resize function
+  this.cWidth = width * 1.3;
+  this.cHeight = height* 1.3;
+  this.cX = x;
+  this.cY = y;
+  this.cbWidth = width;
+  this.cbHeigth = height;
+
   ctx = myGameArea.context;
 
   this.image = new Image();
@@ -36,6 +47,16 @@ function button(x, y, width, height, color){
       this.x,
       this.y,
       this.bWidth, this.bHeight);
+  }
+  this.fResize = function() {
+
+    //console.log(this.maxX);
+    this.width = sca * this.cWidth;
+    this.height = sca * this.cHeight;
+    this.x = sca * this.cX;
+    this.y = sca * this.cY;
+    this.bWidth = sca * this.cbWidth;
+    this.bHeight = sca * this.cbHeigth;
   }
   
   this.clicked = function() {
@@ -65,6 +86,9 @@ function updateGamemenu(){
       myGameArea.start();
       myGameArea.interval = setInterval(updateGameTutorial, 1);
       backgroundTutorial = new image("assets/images/tutorialscreen1.png");
+      menustarted = false;
+      tutorialstarted = true;
+      resize();
     }
   }
   backgroundStart.update();
@@ -82,6 +106,9 @@ function updateGameTutorial(){
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGamemenu, 1);
+      menustarted = true;
+      tutorialstarted = false;
+      resize();
     }
     if (startbutton2.clicked()){
       myGameArea.stop(); 

@@ -27,9 +27,12 @@ function startGame() {
   scorep2 = new score("20px", "Consolas", "black", 750, 60, "Player 2 Score: 0");
 
   specialDonk = new sound("assets/sounds/donk1.mp3");
-  gamestarted = true;
+
   myGameArea.start();
   myGameArea.interval = setInterval(updateGameArea, 20);
+
+  gamestarted = true;
+  resize();
 }
 
 var myGameArea = {

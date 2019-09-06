@@ -4,6 +4,7 @@ function boden(width, height, color, x, y) {
     this.x = x;
     this.y = y;
 
+    //copies of variables used by the resize function
     this.cWidth = width;
     this.cHeight = height;
     this.cX = x;
