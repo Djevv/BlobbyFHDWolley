@@ -5,13 +5,15 @@ function startmenu(){
   myGameArea.start();
   myGameArea.interval = setInterval(updateGamemenu, 1);
   
-  backgroundStart = new image("assets/images/startmenu1.png");
-  startbutton = new button(410, 250, 140, 60, "assets/images/startbutton1.png");
-  tutorialbutton = new button(410, 320, 140, 60, "assets/images/tutorialbutton1.png");
-  creditbutton = new button(410, 390, 140, 60, "assets/images/creditsbutton1.png");
+  backgroundStart = new image("assets/images/backgrounds/startmenu1.png");
+  startbutton = new button(410, 250, 140, 60, "assets/images/buttons/startbutton1.png");
+  tutorialbutton = new button(410, 320, 140, 60, "assets/images/buttons/tutorialbutton1.png");
+  creditbutton = new button(410, 390, 140, 60, "assets/images/buttons/creditsbutton1.png");
 
-  tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/tutorialbutton1.png");
-  startbutton2 = new button(770, 440, 140, 60, "assets/images/startbutton1.png");
+  tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/buttons/backtomenubutton1.png");
+  startbutton2 = new button(770, 440, 140, 60, "assets/images/buttons/startbutton1.png");
+
+  clickSound = new sound ("assets/sounds/donk1.mp3");
 
   menustarted = true;
   resize();
@@ -77,18 +79,22 @@ function updateGamemenu(){
 
   if (myGameArea.x && myGameArea.y) {
     if (startbutton.clicked()) {
+        
         myGameArea.stop();  
         startGame();
+        clickSound.play();
         //myGameArea.interval = setInterval(updateGameTutorial, 1);
     }
     if(tutorialbutton.clicked()){
+      
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGameTutorial, 1);
-      backgroundTutorial = new image("assets/images/tutorialscreen1.png");
+      backgroundTutorial = new image("assets/images/backgrounds/tutorialscreen1.png");
       menustarted = false;
       tutorialstarted = true;
       resize();
+      //clickSound.play();
     }
   }
   backgroundStart.update();
@@ -103,14 +109,17 @@ function updateGameTutorial(){
   
   if (myGameArea.x && myGameArea.y) {
     if (tutorialbuttonBack.clicked()){
+      
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGamemenu, 1);
       menustarted = true;
       tutorialstarted = false;
       resize();
+      clickSound.play();
     }
     if (startbutton2.clicked()){
+      clickSound.play();
       myGameArea.stop(); 
       startGame();
     }
@@ -122,4 +131,5 @@ function updateGameTutorial(){
   backgroundTutorial.update();
   tutorialbuttonBack.update();
   startbutton2.update();
+  resize();
 }

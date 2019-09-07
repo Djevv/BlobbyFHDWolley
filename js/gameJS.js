@@ -11,13 +11,13 @@ var mouseX;
 var mouseY;
 
 function startGame() {
-  background1 = new image("assets/images/strand1.png");
+  background1 = new image("assets/images/backgrounds/strand2.png");
 
-  player1 = new player(60, 120, "assets/images/player1.png", 40, 415, 412, 420, 0, 0);
-  player2 = new player(60, 120, "assets/images/player2.png", 880, 415, 900, 420, 490, 0);
+  player1 = new player(60, 120, "assets/images/players/player1_walk1.png", 40, 415, 412, 420, 0, 0);
+  player2 = new player(60, 120, "assets/images/players/player2_walk1.png", 880, 415, 900, 420, 490, 0);
 
-  myNetz = new player(20, 270, "assets/images/netz.png", 470, 270, 0, 0, 0, 0);
-  ball1 = new ball(40, 40, "assets/images/volleyball1.png", (player1.x + 100), 280, 920, 500);
+  myNetz = new player(20, 270, "assets/images/props/netz1.png", 470, 270, 0, 0, 0, 0);
+  ball1 = new ball(40, 40, "assets/images/props/volleyball1.png", (player1.x + 100), 280, 920, 500);
   ballPointer1 = new ballPointer(40, 10, "yellow", 5);
 
   bodenp1 = new boden(480, 1, "white", 0, 538);
@@ -28,10 +28,14 @@ function startGame() {
 
   specialDonk = new sound("assets/sounds/donk1.mp3");
 
+  gameMusic = new sound("assets/sounds/fhd-ravey.mp3");
+
   myGameArea.start();
   myGameArea.interval = setInterval(updateGameArea, 20);
 
   gamestarted = true;
+
+  gameMusic.play();
   resize();
 }
 
@@ -47,6 +51,13 @@ var myGameArea = {
     window.addEventListener('keydown', function (e) {
       myGameArea.keys = (myGameArea.keys || []);
       myGameArea.keys[e.keyCode] = true;
+
+      if (myGameArea.keys[87] == true && player1.jump == true) {
+        player1.image.src = "assets/images/players/player1_jump.png"
+      }
+      if (myGameArea.keys[38] == true && player2.jump == true) {
+        player2.image.src = "assets/images/players/player2_jump.png"
+      }
     })
 
 
@@ -55,10 +66,12 @@ var myGameArea = {
       if (myGameArea.keys[87] == false && player1.jump == true) {
         player1.gravitySpeed = 0.5;
         player1.jump = false;
+        player1.image.src = "assets/images/players/player1_walk1.png"
       }
       if (myGameArea.keys[38] == false && player2.jump == true) {
         player2.gravitySpeed = 0.5;
         player2.jump = false;
+        player2.image.src = "assets/images/players/player2_walk1.png"
       }
     })
     window.addEventListener('mousedown', function (e) {
@@ -69,6 +82,8 @@ var myGameArea = {
       myGameArea.x = false;
       myGameArea.y = false;
     })
+
+    
   },
   clear : function() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -78,3 +93,17 @@ var myGameArea = {
   }
 }
 
+/*
+window.addEventListener('Escape', function keypress (e) {
+  if(e.key == "Escape") {
+    console.log("escaped!");
+    myGameArea.stop();
+    myGameArea.start();
+    myGameArea.interval = setInterval(updateGamemenu, 1);
+    menustarted = true;
+    tutorialstarted = false;
+    resize();
+    console.log("escaped!");
+    }
+})
+*/

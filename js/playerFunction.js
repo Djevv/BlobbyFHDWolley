@@ -31,9 +31,9 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
 
   this.update = function() {
     ctx.drawImage(this.image,
-        this.x,
-        this.y,
-        this.width, this.height);
+      this.x,
+      this.y,
+      this.width, this.height);
   }
 
   this.fResize = function() {

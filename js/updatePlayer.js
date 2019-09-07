@@ -7,6 +7,8 @@ function p1Updater(){
     if (myGameArea.keys && myGameArea.keys[87] && player1.jump == true) {player1.speedY = -12 * sca;}
     player1.newPos();
     player1.update();
+
+    
 }
   
 function p2Updater() {
