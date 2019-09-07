@@ -13,6 +13,10 @@ function startmenu(){
   tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/buttons/backtomenubutton1.png");
   startbutton2 = new button(770, 440, 140, 60, "assets/images/buttons/startbutton1.png");
 
+  creditsbuttonBack = new button(50, 440, 140, 60, "assets/images/buttons/backtomenubutton1.png");
+  startbutton3 = new button(770, 440, 140, 60, "assets/images/buttons/startbutton1.png");
+  backgroundCredits = new image("assets/images/backgrounds/Credits.png");
+
   backgroundTutorial = new image("assets/images/backgrounds/tutorialscreen1.png");
   clickSound = new sound ("assets/sounds/donk1.mp3");
 
@@ -80,7 +84,8 @@ function updateGamemenu(){
 
   if (myGameArea.x && myGameArea.y) {
     if (startbutton.clicked()) {
-      clickSound.play()
+      clickSound.play();
+      menustarted = false;
       myGameArea.stop();  
       startGame();
       //myGameArea.interval = setInterval(updateGameTutorial, 1);
@@ -94,6 +99,16 @@ function updateGamemenu(){
       tutorialstarted = true;
       resize();
     }
+    if(creditbutton.clicked()){
+      clickSound.play()
+      myGameArea.stop(); 
+      myGameArea.start();
+      myGameArea.interval = setInterval(updateGameCredits, 1);
+      menustarted = false;
+      credits = true;
+      resize();
+    }
+
   }
   backgroundStart.update();
   startbutton.update();
@@ -116,7 +131,8 @@ function updateGameTutorial(){
       resize();
     }
     if (startbutton2.clicked()){
-      clickSound.play()
+      clickSound.play();
+      tutorialstarted = false;
       myGameArea.stop(); 
       startGame();
     }
@@ -127,3 +143,31 @@ function updateGameTutorial(){
   startbutton2.update();
  
 }
+
+function updateGameCredits(){
+  myGameArea.clear();
+  
+  
+  if (myGameArea.x && myGameArea.y) {
+    if (creditsbuttonBack.clicked()){
+      clickSound.play();
+      myGameArea.stop(); 
+      myGameArea.start();
+      myGameArea.interval = setInterval(updateGamemenu, 1);
+      menustarted = true;
+      credits = false;
+      resize();
+    }
+    if (startbutton3.clicked()){
+      clickSound.play();
+      credits = false;
+      myGameArea.stop(); 
+      startGame();
+    }
+  }
+    
+  backgroundCredits.update();
+  creditsbuttonBack.update();
+  startbutton3.update();
+}
+
