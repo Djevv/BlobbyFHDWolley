@@ -34,36 +34,10 @@ function score(width, height, x, y, winscreen){
         }
 }
 
-/*
 function checkScore() {
     myGameArea.stop();
-    gamestarted = false;
-    if(scorep1.Score == 3){
-    ctx = myGameArea.context;
-        ctx.font = "20px" + " " + "Consolas";
-        ctx.fillStyle = "black";
-        ctx.fillText("Player 1 wins!", 450, 200);
-    }
-    if(scorep2.Score == 3){
-        ctx = myGameArea.context;
-            ctx.font = "20px" + " " + "Consolas";
-            ctx.fillStyle = "black";
-            ctx.fillText("Player 2 wins!", 450, 200);
-        }
-    setTimeout(function(){ 
-        myGameArea.start();
-        myGameArea.interval = setInterval(updateGamemenu, 20);
-        menustarted = true;
-        gamestarted = false;
-        resize();
-        backgroundsound.stop();
-    }, 5000);
-}
-*/
-
-
-function checkScore() {
-    myGameArea.stop();
+    myGameArea.clear();
+    background1.update();
     gamestarted = false;
     if(scorep1.Score == 3){
         //ctx = myGameArea.canvas.getContext("2d");
@@ -89,6 +63,5 @@ function checkScore() {
         menustarted = true;
         gamestarted = false;
         resize();
-        backgroundsound.stop();
-    }, 5000);
+        }, 5000);
 }

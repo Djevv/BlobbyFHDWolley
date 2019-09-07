@@ -18,7 +18,7 @@ function resize(){
     sca = scaW;
   }
   
-  if(myGameArea.canvas.width <= window.innerWidth && myGameArea.canvas.height <= window.innerHeight && sca>=1){
+  if(sca>=1){
   myGameArea.canvas.width = 960 * sca;
   myGameArea.canvas.height = 540 * sca;
   
