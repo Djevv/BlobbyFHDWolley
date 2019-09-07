@@ -12,6 +12,7 @@ function player(width, height, color, x, y, maxX, maxY, minX, minY) {
   this.gravity = 0.4;
   this.gravitySpeed = 0;
   this.hits = 0; 
+  this.anim = true;
 
   //copies of variables used by the resize function
   this.cWidth = width;
