@@ -27,7 +27,6 @@ function startGame() {
   scorep2 = new score("20px", "Consolas", "black", 750, 60, "Player 2 Score: 0");
 
   specialDonk = new sound("assets/sounds/donk1.mp3");
-  backgroundsound = new sound("assets/sounds/fhd-ravey.mp3");
 
   gameMusic = new sound("assets/sounds/fhd-ravey.mp3");
 
@@ -39,7 +38,6 @@ function startGame() {
   gameMusic.play();
   resize();
 
-  backgroundsound.play();
 }
 
 var myGameArea = {

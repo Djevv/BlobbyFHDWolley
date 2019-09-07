@@ -13,6 +13,7 @@ function startmenu(){
   tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/buttons/backtomenubutton1.png");
   startbutton2 = new button(770, 440, 140, 60, "assets/images/buttons/startbutton1.png");
 
+  backgroundTutorial = new image("assets/images/backgrounds/tutorialscreen1.png");
   clickSound = new sound ("assets/sounds/donk1.mp3");
 
   menustarted = true;
@@ -79,22 +80,19 @@ function updateGamemenu(){
 
   if (myGameArea.x && myGameArea.y) {
     if (startbutton.clicked()) {
-        
-        myGameArea.stop();  
-        startGame();
-        clickSound.play();
-        //myGameArea.interval = setInterval(updateGameTutorial, 1);
+      clickSound.play()
+      myGameArea.stop();  
+      startGame();
+      //myGameArea.interval = setInterval(updateGameTutorial, 1);
     }
     if(tutorialbutton.clicked()){
-      
+      clickSound.play()
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGameTutorial, 1);
-      backgroundTutorial = new image("assets/images/backgrounds/tutorialscreen1.png");
       menustarted = false;
       tutorialstarted = true;
       resize();
-      //clickSound.play();
     }
   }
   backgroundStart.update();
@@ -109,17 +107,16 @@ function updateGameTutorial(){
   
   if (myGameArea.x && myGameArea.y) {
     if (tutorialbuttonBack.clicked()){
-      
+      clickSound.play()
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGamemenu, 1);
       menustarted = true;
       tutorialstarted = false;
       resize();
-      clickSound.play();
     }
     if (startbutton2.clicked()){
-      clickSound.play();
+      clickSound.play()
       myGameArea.stop(); 
       startGame();
     }
@@ -131,5 +128,5 @@ function updateGameTutorial(){
   backgroundTutorial.update();
   tutorialbuttonBack.update();
   startbutton2.update();
-  resize();
+ 
 }
