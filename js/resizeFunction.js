@@ -6,6 +6,7 @@ var sca = 1;
 gamestarted = false;
 menustarted = false;
 tutorialstarted = false;
+credits = false;
 
 function resize(){
   var scaW = (window.innerWidth/960)*0.9;
@@ -42,6 +43,10 @@ function resize(){
   if(tutorialstarted){
     tutorialbuttonBack.fResize();
     startbutton2.fResize();
+  }
+  if(credits){
+    creditsbuttonBack.fResize();
+    startbutton3.fResize();
   }
 
   }

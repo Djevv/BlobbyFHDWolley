@@ -31,6 +31,5 @@ function updateGameArea() {
   scorep1.update();
   scorep2.update();
 
-  //if(scorep1 == 3 || scorep2 == 3){myGameArea.stop();}
-  }
+}
 }
