@@ -31,5 +31,5 @@ function updateGameArea() {
   scorep1.update();
   scorep2.update();
 
-}
+  }
 }
