@@ -28,14 +28,11 @@ function startGame() {
 
   specialDonk = new sound("assets/sounds/donk1.mp3");
 
-  gameMusic = new sound("assets/sounds/fhd-ravey.mp3");
-
   myGameArea.start();
   myGameArea.interval = setInterval(updateGameArea, 20);
 
   gamestarted = true;
 
-  gameMusic.play();
   resize();
 
 }

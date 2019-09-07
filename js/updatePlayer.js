@@ -4,7 +4,7 @@ function p1Updater(){
     player1.speedY = 0;
     if (myGameArea.keys && myGameArea.keys[65]) {player1.speedX = -7 * sca; p1WalkAnimation();}
     if (myGameArea.keys && myGameArea.keys[68]) {player1.speedX = 7 * sca; p1WalkAnimation();}
-    if (myGameArea.keys && myGameArea.keys[87] && player1.jump == true) {player1.speedY = -12 * sca;}
+    if (myGameArea.keys && myGameArea.keys[87] && player1.jump == true) {player1.speedY = -12 * sca; p1JumpAnimation();}
     player1.newPos();
     player1.update();
 
@@ -18,7 +18,7 @@ function p2Updater() {
     player2.speedY = 0;
     if (myGameArea.keys && myGameArea.keys[37]) {player2.speedX = -7 * sca; p2WalkAnimation();}
     if (myGameArea.keys && myGameArea.keys[39]) {player2.speedX = 7 * sca; p2WalkAnimation();}
-    if (myGameArea.keys && myGameArea.keys[38] && player2.jump == true) {player2.speedY = -12 * sca;}
+    if (myGameArea.keys && myGameArea.keys[38] && player2.jump == true) {player2.speedY = -12 * sca; p1JumpAnimation();}
     player2.newPos();
     player2.update();
 }
