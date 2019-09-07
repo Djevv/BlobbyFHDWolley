@@ -1,10 +1,12 @@
-function score(width, height, x, y){
+function score(width, height, x, y, winscreen){
     this.width = width;
     this.height = height;
     this.x = x;
     this.y = y;
     this.Score = 0;
     this.number = ["assets/images/numbers/sn0.png", "assets/images/numbers/sn1.png", "assets/images/numbers/sn2.png", "assets/images/numbers/sn3.png", "assets/images/numbers/sn4.png", "assets/images/numbers/sn5.png", "assets/images/numbers/sn6.png", "assets/images/numbers/sn7.png", "assets/images/numbers/sn8.png", "assets/images/numbers/sn9.png", "assets/images/numbers/sn10.png", "assets/images/numbers/sn11.png", "assets/images/numbers/sn12.png"];
+    this.win = new Image();
+    this.win.src = winscreen;
 
     //copies of variables used by the resize function
     this.cWidth = width;
@@ -64,19 +66,19 @@ function checkScore() {
     myGameArea.stop();
     gamestarted = false;
     if(scorep1.Score == 3){
-        ctx = myGameArea.canvas.getContext("2d");
-        this.image = new Image();
-        this.image.src = "assets/images/backgrounds/p1win.png";
-        ctx.drawImage(this.image,
+        //ctx = myGameArea.canvas.getContext("2d");
+        //this.image = new Image();
+        //this.image.src = "assets/images/backgrounds/p1win.png";
+        ctx.drawImage(scorep1.win,
             0,
             0,
-            1920, 1080);
+            myGameArea.canvas.width,  myGameArea.canvas.height);
     }
     if(scorep2.Score == 3){
-        ctx = myGameArea.canvas.getContext("2d");
-        this.image = new Image();
-        this.image.src = "assets/images/backgrounds/p2win.png";
-        ctx.drawImage(this.image,
+        //ctx = myGameArea.canvas.getContext("2d");
+        //this.image = new Image();
+        //this.image.src = "assets/images/backgrounds/p2win.png";
+        ctx.drawImage(scorep2.win,
             0,
             0,
             myGameArea.canvas.width, myGameArea.canvas.height);
@@ -86,5 +88,7 @@ function checkScore() {
         myGameArea.interval = setInterval(updateGamemenu, 20);
         menustarted = true;
         gamestarted = false;
+        resize();
+        backgroundsound.stop();
     }, 5000);
 }
