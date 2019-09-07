@@ -107,7 +107,7 @@ function updateGameTutorial(){
   
   if (myGameArea.x && myGameArea.y) {
     if (tutorialbuttonBack.clicked()){
-      clickSound.play()
+      clickSound.play();
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGamemenu, 1);
@@ -121,10 +121,7 @@ function updateGameTutorial(){
       startGame();
     }
   }
-  
-  
-
-  
+    
   backgroundTutorial.update();
   tutorialbuttonBack.update();
   startbutton2.update();

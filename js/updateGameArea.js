@@ -1,5 +1,5 @@
 function updateGameArea() {
-
+  background1.update();
   //Checking Score and if game has to be stopped
   if(scorep1.Score == 3 || scorep2.Score == 3){
     checkScore();
