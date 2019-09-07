@@ -48,5 +48,7 @@ function checkScore() {
         myGameArea.interval = setInterval(updateGamemenu, 20);
         menustarted = true;
         gamestarted = false;
+        resize();
+        backgroundsound.stop();
     }, 5000);
 }
