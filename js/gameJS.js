@@ -23,8 +23,8 @@ function startGame() {
   bodenp1 = new boden(480, 1, "white", 0, 538);
   bodenp2 = new boden(480, 1, "white", 480, 538);
 
-  scorep1 = new score("20px", "Consolas", "black", 20, 60, "Player 1 Score: 0");
-  scorep2 = new score("20px", "Consolas", "black", 750, 60, "Player 2 Score: 0");
+  scorep1 = new score(40, 40, 20, 60);
+  scorep2 = new score(40, 40, 900, 60);
 
   specialDonk = new sound("assets/sounds/donk1.mp3");
 

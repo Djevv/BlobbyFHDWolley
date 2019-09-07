@@ -29,7 +29,6 @@ function p1CollisionTrue(){
 
     ball1.firsthit = false;
     scorep2.Score += 1;
-    scorep2.text = "Player 2 Score: " + scorep2.Score;
 
     player1.hits = 0;
     player2.hits = 0;
@@ -44,7 +43,7 @@ function p2CollisionTrue(){
 
     ball1.firsthit = false;
     scorep1.Score += 1;
-    scorep1.text = "Player 1 Score: " + scorep1.Score;
+
     player1.hits = 0;
     player2.hits = 0;
     //console.log("p1 hits: " + player1.hits);
