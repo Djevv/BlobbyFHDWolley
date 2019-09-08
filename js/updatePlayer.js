@@ -10,10 +10,9 @@ function p1Updater(){
 
     
 }
-  
-function p2Updater() {
-//For player 2
 
+function p2Updater() {
+    //For player 2
     player2.speedX = 0;
     player2.speedY = 0;
     if (myGameArea.keys && myGameArea.keys[37]) {player2.speedX = -7 * sca; p2WalkAnimation();}
@@ -30,8 +29,6 @@ function p1FloorTrue(){
     ball1.firsthit = false;
     scorep2.Score += 1;
 
-    player1.hits = 0;
-    player2.hits = 0;
     randomDonk();
 }
 
@@ -42,8 +39,6 @@ function p2FloorTrue(){
     ball1.firsthit = false;
     scorep1.Score += 1;
 
-    player1.hits = 0;
-    player2.hits = 0;
     randomDonk();
 }
 

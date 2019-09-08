@@ -2,6 +2,8 @@
 A small retro-game which is oriented at "Blobby Volley".
 The objective of the game is to achieve 12 points by having the ball touch the opponents floor!
 
+
+
 # Licence
 All assets are made by ourselves.
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
@@ -42,6 +44,10 @@ Assets (Drawing, Sounds):
 - Background (S)
 - Menu (S)
 - Sounds (S)
+
+Additional Features:
+- Ballpointer  (S)
+- 
 
 Documents:
 - README (S)
