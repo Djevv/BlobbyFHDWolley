@@ -26,7 +26,7 @@ function updateGameArea() {
   if(ball1.collisionp1(bodenp1)){p1FloorTrue();};
   if(ball1.collisionp1(bodenp2)){p2FloorTrue();};
 
-  ball1Updater();
+  updateBall();
 
   scorep1.update();
   scorep2.update();
