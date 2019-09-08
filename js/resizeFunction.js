@@ -23,30 +23,32 @@ function resize(){
   myGameArea.canvas.width = 960 * sca;
   myGameArea.canvas.height = 540 * sca;
   //the following if statements resize different objects depending on which part of the game is shown at the moment
-  if(gamestarted){
-    player1.fResize();
-    player2.fResize();
-    myNetz.fResize();
-    floorp1.fResize();
-    floorp2.fResize();
-    ball1.fResize();
-    scorep1.fResize();
-    scorep2.fResize();
-  }
+    if(gamestarted){
+      player1.fResize();
+      player2.fResize();
+      myNetz.fResize();
+      floorp1.fResize();
+      floorp2.fResize();
+      ball1.fResize();
+      scorep1.fResize();
+      scorep2.fResize();
+    }
 
-  if(menustarted){
-    startbutton.fResize();
-    tutorialbutton.fResize();
-    creditbutton.fResize();
-  }
-  if(tutorialstarted){
-    tutorialbuttonBack.fResize();
-    startbutton2.fResize();
-  }
-  if(credits){
-    creditsbuttonBack.fResize();
-    startbutton3.fResize();
-  }
+    if(menustarted){
+      startbutton.fResize();
+      tutorialbutton.fResize();
+      creditbutton.fResize();
+    }
+    
+    if(tutorialstarted){
+      tutorialbuttonBack.fResize();
+      startbutton2.fResize();
+    }
+
+    if(credits){
+      creditsbuttonBack.fResize();
+      startbutton3.fResize();
+    }
 
   }
 
