@@ -9,8 +9,8 @@ tutorialstarted = false;
 credits = false;
 
 function resize(){
-  var scaW = (window.innerWidth/960)*0.94;
-  var scaH = (window.innerHeight/540)*0.94;
+  var scaW = (window.innerWidth/960)*0.93;
+  var scaH = (window.innerHeight/540)*0.93;
 
 
   if (scaH < scaW) {

@@ -31,6 +31,10 @@ function startGame() {
   myGameArea.start();
   myGameArea.interval = setInterval(updateGameArea, 20);
 
+  gameMusic = new sound("assets/sounds/fhd-ravey.mp3");
+  gameMusic.sound.loop = "loop";
+  gameMusic.play();
+
   gamestarted = true;
 
   resize();

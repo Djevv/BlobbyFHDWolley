@@ -90,8 +90,9 @@ function updateGamemenu(){
       startGame();
       //myGameArea.interval = setInterval(updateGameTutorial, 1);
     }
+    
     if(tutorialbutton.clicked()){
-      clickSound.play()
+      clickSound.play();
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGameTutorial, 1);
@@ -99,8 +100,9 @@ function updateGamemenu(){
       tutorialstarted = true;
       resize();
     }
+
     if(creditbutton.clicked()){
-      clickSound.play()
+      clickSound.play();
       myGameArea.stop(); 
       myGameArea.start();
       myGameArea.interval = setInterval(updateGameCredits, 1);
@@ -130,6 +132,7 @@ function updateGameTutorial(){
       tutorialstarted = false;
       resize();
     }
+
     if (startbutton2.clicked()){
       clickSound.play();
       tutorialstarted = false;
@@ -158,6 +161,7 @@ function updateGameCredits(){
       credits = false;
       resize();
     }
+
     if (startbutton3.clicked()){
       clickSound.play();
       credits = false;
