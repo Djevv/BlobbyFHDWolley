@@ -1,4 +1,4 @@
-# FHD-Wolley
+# FHD-Wolley v1.0
 A small retro-game which is oriented at "Blobby Volley".
 The objective of the game is to achieve 12 points by having the ball touch the opponents floor!
 Use W/A/S/D for player 1 and the arrow keys for player 2 to move.
@@ -9,6 +9,8 @@ All assets are made by ourselves.
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
 To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to 
 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+no(!) 3rd party assets have been used.
 
 # Authors
 - Philipp Lottis
@@ -44,10 +46,6 @@ Assets (Drawing, Sounds):
 - Background (S)
 - Menu (S)
 - Sounds (S)
-
-Additional Features:
-- Ballpointer  (S)
-- 
 
 Documents:
 - README (S)
