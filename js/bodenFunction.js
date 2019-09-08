@@ -1,4 +1,4 @@
-function boden(width, height, color, x, y) {
+function floor(width, height, color, x, y) {
     this.width = width;
     this.height = height;
     this.x = x;

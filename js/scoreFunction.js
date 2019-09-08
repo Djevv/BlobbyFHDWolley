@@ -26,7 +26,6 @@ function score(width, height, x, y, winscreen){
     }
     this.fResize = function() {
 
-        //console.log(this.maxX);
         this.width = sca * this.cWidth;
         this.height = sca * this.cHeight;
         this.x = sca * this.cX;
@@ -39,19 +38,13 @@ function checkScore() {
     myGameArea.clear();
     background1.update();
     gamestarted = false;
-    if(scorep1.Score == 3){
-        //ctx = myGameArea.canvas.getContext("2d");
-        //this.image = new Image();
-        //this.image.src = "assets/images/backgrounds/p1win.png";
+    if(scorep1.Score == 12){
         ctx.drawImage(scorep1.win,
             0,
             0,
             myGameArea.canvas.width,  myGameArea.canvas.height);
     }
-    if(scorep2.Score == 3){
-        //ctx = myGameArea.canvas.getContext("2d");
-        //this.image = new Image();
-        //this.image.src = "assets/images/backgrounds/p2win.png";
+    if(scorep2.Score == 12){
         ctx.drawImage(scorep2.win,
             0,
             0,

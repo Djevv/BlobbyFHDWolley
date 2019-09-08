@@ -22,12 +22,6 @@ function ball(width, height, color, x, y, maxX, maxY) {
   this.cMaxX = maxX;
   this.cMaxY = maxY;
   this.cGravity = 0.2;
-  //this.cMinX = minX;
-  //this.cMinY = minY;
-  
-  this.p1hit = true;
-  this.p2hit = true;
-
 
   this.image = new Image();
   this.image.src = color;
@@ -47,7 +41,7 @@ function ball(width, height, color, x, y, maxX, maxY) {
   }
 
   this.fResize = function() {
-    //console.log(this.maxX);
+  
     this.width = sca * this.cWidth;
     this.height = sca * this.cHeight;
     this.x = sca * this.cX;
@@ -72,7 +66,6 @@ function ball(width, height, color, x, y, maxX, maxY) {
         this.y = this.y + this.speedY + this.gravitySpeed;
       } else {
         this.gravitySpeed = 0;
-        this.gravitySpeedX = 0;
       }
 
     }
@@ -96,12 +89,5 @@ function ball(width, height, color, x, y, maxX, maxY) {
       collision = false;
     }
     return collision;
-  }
-  
-  
-  this.setHitTrue = function(){
-    this.p1hit = true;
-    this.p2hit = true;
-  }
-  
+  }  
 }

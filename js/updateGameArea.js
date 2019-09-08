@@ -8,8 +8,8 @@ function updateGameArea() {
   myGameArea.clear();
   
   //For Net + Floor and Background
-  bodenp1.update();
-  bodenp2.update(); 
+  floorp1.update();
+  floorp2.update(); 
   background1.update();
   myNetz.update(); 
 
@@ -23,8 +23,8 @@ function updateGameArea() {
 
 
   //Check collision with oponents floor 
-  if(ball1.collisionp1(bodenp1)){p1FloorTrue();};
-  if(ball1.collisionp1(bodenp2)){p2FloorTrue();};
+  if(ball1.collisionp1(floorp1)){p1FloorTrue();};
+  if(ball1.collisionp1(floorp2)){p2FloorTrue();};
 
   updateBall();
 

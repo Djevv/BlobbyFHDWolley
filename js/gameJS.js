@@ -2,8 +2,8 @@ var player1;
 var player2;
 var ball1;
 var myNetz;
-var bodenp1;
-var bodenp2;
+var floorp1;
+var floorp2;
 var ballPointer1;
 var scorep1;
 var scorep2;
@@ -20,8 +20,8 @@ function startGame() {
   ball1 = new ball(40, 40, "assets/images/props/volleyball1.png", (player1.x + 100), 280, 920, 500);
   ballPointer1 = new ballPointer(40, 10, "yellow", 5);
 
-  bodenp1 = new boden(480, 1, "white", 0, 538);
-  bodenp2 = new boden(480, 1, "white", 480, 538);
+  floorp1 = new floor(480, 1, "white", 0, 538);
+  floorp2 = new floor(480, 1, "white", 480, 538);
 
   scorep1 = new score(40, 40, 20, 60, "assets/images/backgrounds/p1win.png");
   scorep2 = new score(40, 40, 900, 60, "assets/images/backgrounds/p2win.png");
