@@ -18,7 +18,7 @@ function p2Updater() {
     player2.speedY = 0;
     if (myGameArea.keys && myGameArea.keys[37]) {player2.speedX = -7 * sca; p2WalkAnimation();}
     if (myGameArea.keys && myGameArea.keys[39]) {player2.speedX = 7 * sca; p2WalkAnimation();}
-    if (myGameArea.keys && myGameArea.keys[38] && player2.jump == true) {player2.speedY = -12 * sca; p1JumpAnimation();}
+    if (myGameArea.keys && myGameArea.keys[38] && player2.jump == true) {player2.speedY = -12 * sca; p2JumpAnimation();}
     player2.newPos();
     player2.update();
 }

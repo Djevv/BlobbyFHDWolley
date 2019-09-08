@@ -31,5 +31,15 @@ function updateGameArea() {
   scorep1.update();
   scorep2.update();
 
-}
+  if(myGameArea.keys[27]) {
+    myGameArea.stop();
+    myGameArea.start();
+    myGameArea.interval = setInterval(updateGamemenu, 1);
+    menustarted = true;
+    gamestarted = false;
+    gameMusic.stop();
+    resize();
+  }
+
+  }
 }
