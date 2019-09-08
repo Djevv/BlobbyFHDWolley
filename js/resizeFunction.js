@@ -27,8 +27,8 @@ function resize(){
     player1.fResize();
     player2.fResize();
     myNetz.fResize();
-    bodenp1.fResize();
-    bodenp2.fResize();
+    floorp1.fResize();
+    floorp2.fResize();
     ball1.fResize();
     scorep1.fResize();
     scorep2.fResize();
