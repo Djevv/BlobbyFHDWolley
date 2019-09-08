@@ -9,6 +9,7 @@ function startmenu(){
   startbutton = new button(410, 250, 140, 60, "assets/images/buttons/startbutton1.png");
   tutorialbutton = new button(410, 320, 140, 60, "assets/images/buttons/tutorialbutton1.png");
   creditbutton = new button(410, 390, 140, 60, "assets/images/buttons/creditsbutton1.png");
+  version = new button(20, 500, 0, 0, "black");
 
   tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/buttons/backtomenubutton1.png");
   startbutton2 = new button(770, 440, 140, 60, "assets/images/buttons/startbutton1.png");
@@ -55,6 +56,13 @@ function button(x, y, width, height, color){
       this.y,
       this.bWidth, this.bHeight);
   }
+
+  this.updatetext = function(){
+    ctx.font = "30px" + " " + "Consolas";
+    ctx.fillStyle = this.color;
+    ctx.fillText("Version 1.0", this.x, this.y);
+  }
+  
   this.fResize = function() {
 
     //console.log(this.maxX);
@@ -114,6 +122,7 @@ function updateGamemenu(){
   startbutton.update();
   tutorialbutton.update();
   creditbutton.update();
+  version.updatetext();
 }
 
 function updateGameTutorial(){
