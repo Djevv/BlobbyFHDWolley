@@ -38,7 +38,6 @@ function resize(){
     startbutton.fResize();
     tutorialbutton.fResize();
     creditbutton.fResize();
-    version.fResize();
   }
   if(tutorialstarted){
     tutorialbuttonBack.fResize();

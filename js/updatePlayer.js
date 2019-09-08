@@ -23,7 +23,7 @@ function p2Updater() {
     player2.update();
 }
 
-function p1CollisionTrue(){
+function p1FloorTrue(){
     ball1.x = (myGameArea.canvas.width / 4) * 3;
     ball1.y = 280 * sca;
 
@@ -32,12 +32,10 @@ function p1CollisionTrue(){
 
     player1.hits = 0;
     player2.hits = 0;
-    //console.log("p1 hits: " + player1.hits);
-    //console.log("p2 hits: " + player2.hits);
     randomDonk();
 }
 
-function p2CollisionTrue(){
+function p2FloorTrue(){
     ball1.x = myGameArea.canvas.width / 4;
     ball1.y = 280 * sca;
 
@@ -46,8 +44,6 @@ function p2CollisionTrue(){
 
     player1.hits = 0;
     player2.hits = 0;
-    //console.log("p1 hits: " + player1.hits);
-    //console.log("p2 hits: " + player2.hits);
     randomDonk();
 }
 

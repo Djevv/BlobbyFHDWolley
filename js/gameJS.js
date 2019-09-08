@@ -46,7 +46,6 @@ var myGameArea = {
   start : function() {
     this.canvas.width = 960;
     this.canvas.height = 540;
-    //resize();
     this.context = this.canvas.getContext("2d");
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     
@@ -62,12 +61,12 @@ var myGameArea = {
       if (myGameArea.keys[87] == false && player1.jump == true) {
         player1.gravitySpeed = 0.5;
         player1.jump = false;
-        //player1.image.src = "assets/images/players/player1_walk1.png"
+        player1.image.src = "assets/images/players/player1_walk1.png"
       }
       if (myGameArea.keys[38] == false && player2.jump == true) {
         player2.gravitySpeed = 0.5;
         player2.jump = false;
-        //player2.image.src = "assets/images/players/player2_walk1.png"
+        player2.image.src = "assets/images/players/player2_walk1.png"
       }
     })
 
@@ -90,20 +89,3 @@ var myGameArea = {
     clearInterval(this.interval);
   }
 }
-
-
-
-/*
-window.addEventListener('Escape', function keypress (e) {
-  if(e.key == "Escape") {
-    console.log("escaped!");
-    myGameArea.stop();
-    myGameArea.start();
-    myGameArea.interval = setInterval(updateGamemenu, 1);
-    menustarted = true;
-    tutorialstarted = false;
-    resize();
-    console.log("escaped!");
-    }
-})
-*/

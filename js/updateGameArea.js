@@ -1,6 +1,6 @@
 function updateGameArea() {
   //Checking Score and if game has to be stopped
-  if(scorep1.Score == 3 || scorep2.Score == 3){
+  if(scorep1.Score == 12 || scorep2.Score == 12){
     checkScore();
   } else{
 
@@ -23,8 +23,8 @@ function updateGameArea() {
 
 
   //Check collision with oponents floor 
-  if(ball1.collisionp1(bodenp1) || player1.hits == 4){p1CollisionTrue();};
-  if(ball1.collisionp1(bodenp2) || player2.hits == 4){p2CollisionTrue();};
+  if(ball1.collisionp1(bodenp1)){p1FloorTrue();};
+  if(ball1.collisionp1(bodenp2)){p2FloorTrue();};
 
   ball1Updater();
 

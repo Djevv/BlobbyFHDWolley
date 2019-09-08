@@ -1,5 +1,5 @@
 var startbutton;
-var clickWait = false;
+var version = "V 1.0";
 
 function startmenu(){
   myGameArea.start();
@@ -9,7 +9,6 @@ function startmenu(){
   startbutton = new button(410, 250, 140, 60, "assets/images/buttons/startbutton1.png");
   tutorialbutton = new button(410, 320, 140, 60, "assets/images/buttons/tutorialbutton1.png");
   creditbutton = new button(410, 390, 140, 60, "assets/images/buttons/creditsbutton1.png");
-  version = new button(20, 500, 0, 0, "black");
 
   tutorialbuttonBack = new button(50, 440, 140, 60, "assets/images/buttons/backtomenubutton1.png");
   startbutton2 = new button(770, 440, 140, 60, "assets/images/buttons/startbutton1.png");
@@ -27,66 +26,6 @@ function startmenu(){
   updateGamemenu();
 }
 
-
-function button(x, y, width, height, color){
-  this.x = x;
-  this.y = y;
-  this.width = width*1.3;
-  this.height = height*1.3;
-  this.color = color;
-  this.bWidth = width;
-  this.bHeight = height;
-
-  //copies of variables used by the resize function
-  this.cWidth = width * 1.3;
-  this.cHeight = height* 1.3;
-  this.cX = x;
-  this.cY = y;
-  this.cbWidth = width;
-  this.cbHeigth = height;
-
-  ctx = myGameArea.context;
-
-  this.image = new Image();
-  this.image.src = color;
-
-  this.update = function() {
-    ctx.drawImage(this.image,
-      this.x,
-      this.y,
-      this.bWidth, this.bHeight);
-  }
-
-  this.updatetext = function(){
-    ctx.font = "30px" + " " + "Consolas";
-    ctx.fillStyle = this.color;
-    ctx.fillText("Version 1.0", this.x, this.y);
-  }
-  
-  this.fResize = function() {
-
-    //console.log(this.maxX);
-    this.width = sca * this.cWidth;
-    this.height = sca * this.cHeight;
-    this.x = sca * this.cX;
-    this.y = sca * this.cY;
-    this.bWidth = sca * this.cbWidth;
-    this.bHeight = sca * this.cbHeigth;
-  }
-  
-  this.clicked = function() {
-  var myleft = this.x;
-  var myright = this.x + (this.width);
-  var mytop = this.y;
-  var mybottom = this.y + (this.height);
-  var clicked = true;
-  if ((mybottom < myGameArea.y) || (mytop > myGameArea.y) || (myright < myGameArea.x) || (myleft > myGameArea.x)) {
-    clicked = false;
-  }
-  return clicked;
-  }
-}
-
 function updateGamemenu(){
   myGameArea.clear();
 
@@ -96,7 +35,6 @@ function updateGamemenu(){
       menustarted = false;
       myGameArea.stop();  
       startGame();
-      //myGameArea.interval = setInterval(updateGameTutorial, 1);
     }
     
     if(tutorialbutton.clicked()){
@@ -124,7 +62,10 @@ function updateGamemenu(){
   startbutton.update();
   tutorialbutton.update();
   creditbutton.update();
-  version.updatetext();
+
+  ctx.font = "30px" + " " + "Consolas";
+  ctx.fillStyle = "black";
+  ctx.fillText(version, 30, 30);
 }
 
 function updateGameTutorial(){
