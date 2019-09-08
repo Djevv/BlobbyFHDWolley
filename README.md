@@ -1,7 +1,7 @@
 # FHD-Wolley
 A small retro-game which is oriented at "Blobby Volley".
 The objective of the game is to achieve 12 points by having the ball touch the opponents floor!
-
+Use W/A/S/D for player 1 and the arrow keys for player 2 to move.
 
 
 # Licence
@@ -54,7 +54,10 @@ Documents:
 - Licence  (P)
 - Pitchslide (P)
 
-# Known Bugs (very rare and therefore not reproducible, so please try for yourself first ;) )
+# Known Bugs (most are very rare and therefore not reproducible, so please try for yourself first ;) )
 - Ball collides with net in a way that it falls through the net
 - Music happens to overlap after very long sessions, even though it is set to only loop after ending
 - Menu Buttons don't scale after a game 
+- The game has random performance issues in firefox
+- the "score_sound" isnt played if there is another score immediately after  
+- the 12th score isnt shown after winning
