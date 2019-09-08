@@ -31,7 +31,7 @@ function updateGameArea() {
   scorep1.update();
   scorep2.update();
 
-  if(myGameArea.keys[27]) {
+  if(myGameArea.keys && myGameArea.keys[27]) {
     myGameArea.stop();
     myGameArea.start();
     myGameArea.interval = setInterval(updateGamemenu, 1);

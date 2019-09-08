@@ -12,7 +12,7 @@ function resize(){
   var scaW = (window.innerWidth/960)*0.93;
   var scaH = (window.innerHeight/540)*0.93;
 
-
+  //sca will always be set to the smaller relation to be able to fit the smaller screen
   if (scaH < scaW) {
     sca = scaH;
   } else {
@@ -22,7 +22,7 @@ function resize(){
   if(sca>=1){
   myGameArea.canvas.width = 960 * sca;
   myGameArea.canvas.height = 540 * sca;
-  
+  //the following if statements resize different objects depending on which part of the game is shown at the moment
   if(gamestarted){
     player1.fResize();
     player2.fResize();
