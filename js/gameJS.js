@@ -31,6 +31,8 @@ function startGame() {
   myGameArea.start();
   myGameArea.interval = setInterval(updateGameArea, 20);
 
+  scoreSound = new sound("assets/sounds/score_sound.mp3");
+  winSound = new sound("assets/sounds/win_sound.mp3");
   gameMusic = new sound("assets/sounds/fhd-ravey.mp3");
   gameMusic.sound.loop = "loop";
   gameMusic.play();

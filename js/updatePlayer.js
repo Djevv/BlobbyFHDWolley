@@ -29,7 +29,9 @@ function p1FloorTrue(){
     ball1.firsthit = false;
     scorep2.Score += 1;
 
-    randomDonk();
+    scoreSound.play();
+    //setTimeout(function(){scoreSound.stop()}, 50);
+   
 }
 
 function p2FloorTrue(){
@@ -39,7 +41,9 @@ function p2FloorTrue(){
     ball1.firsthit = false;
     scorep1.Score += 1;
 
-    randomDonk();
+    scoreSound.play();
+    //setTimeout(function(){scoreSound.stop()}, 50);
+    
 }
 
 function p1WalkAnimation() {

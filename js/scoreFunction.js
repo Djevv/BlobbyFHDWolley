@@ -39,12 +39,14 @@ function checkScore() {
     background1.update();
     gamestarted = false;
     if(scorep1.Score == 12){
+        winSound.play();
         ctx.drawImage(scorep1.win,
             0,
             0,
             myGameArea.canvas.width,  myGameArea.canvas.height);
     }
     if(scorep2.Score == 12){
+        winSound.play();
         ctx.drawImage(scorep2.win,
             0,
             0,
